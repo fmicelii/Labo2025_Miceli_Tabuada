@@ -45,5 +45,4 @@ int main(){
         {5,"Laptop", 9500.00}
     };
 
-    agregar_pedido(productos, lista_pedidos);
 }

@@ -36,7 +36,6 @@ void hacer_pedido(vector <Producto> p){
     
 }
 int main() {
-    // Crear un vector de productos de McDonald's con códigos numéricos del 1 al 20
     vector<Producto> productos = {
         {1, "Big Mac", 5000, 150, "Hamburguesa", true},
         {2, "McPollo", 4000, 120, "Hamburguesa", false},

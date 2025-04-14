@@ -93,7 +93,8 @@ public class Fecha {
             System.out.println("La primera fecha es posterior.");
         } else {
             System.out.println("Las fechas son iguales.");
-        }    }
+        }
+    }
 
     public static void main(String[] args) {
         Fecha fe1 = new Fecha(87,98,2012);

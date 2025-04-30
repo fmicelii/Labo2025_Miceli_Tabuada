@@ -2,6 +2,7 @@ package U2.Torneo;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Equipo {
     private String nombre;
@@ -13,13 +14,17 @@ public class Equipo {
     public Equipo(){
         this.nombre = "viejardos";
         this.barrio = "coghlan";
+        this.jugadores = new ArrayList<>();
         this.disponibilidad = "tarde";
+        this.capitan = null;
     }
 
     public Equipo(String nombre, String barrio, String disponibilidad){
         this.nombre = nombre;
         this.barrio = barrio;
+        this.jugadores = new ArrayList<>();
         this.disponibilidad = disponibilidad;
+        this.capitan = null;
     }
     public String getNombre() {
         return nombre;
@@ -69,7 +74,6 @@ public class Equipo {
         }
         return true;
     }
-
     public void agregarJugador(Jugador jugador){
         boolean numerin = comprobarNumeroCamiseta(jugador.getNumero());
         if (numerin){
@@ -79,13 +83,14 @@ public class Equipo {
             System.out.println("no se pudo agregar jugador");
         }
     }
-
     public void definirCapitan(Jugador jugador){
         for (Jugador jugadorcito : jugadores){
-            if (jugador == jugadorcito){
+            if (Objects.equals(jugador, jugadorcito)) {
                 capitan = jugador;
+                return;
             }
         }
         System.out.println("el jugador no esta en la lista del equipo papi");
     }
+
 }

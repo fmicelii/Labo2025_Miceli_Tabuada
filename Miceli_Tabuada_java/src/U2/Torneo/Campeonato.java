@@ -18,6 +18,13 @@ public class Campeonato {
         this.equiposTarde = equiposTarde;
         this.equiposNoche = equiposNoche;
     }
+    public Campeonato(ArrayList<Equipo> equipos){
+        this.equipos = equipos;
+        this.partidos = new ArrayList<>();
+        this.equiposManana = new ArrayList<>();
+        this.equiposTarde = new ArrayList<>();
+        this.equiposNoche = new ArrayList<>();
+    }
 
     public ArrayList<Equipo> getEquipos() {
         return equipos;
@@ -70,32 +77,57 @@ public class Campeonato {
             }
         }
     }
-    public void enfrentarManana(){
-        for (int i = 0; i < equiposManana.size()-1; i++) {
-            for (int j = 1; j < equiposManana.size(); j++) {
-                Equipo e1 = new Equipo(equiposManana.get(i).getNombre(),equiposManana.get(i).getBarrio(),equiposManana.get(i).getDisponibilidad());
-                Equipo e2 = new Equipo(equiposManana.get(j).getNombre(),equiposManana.get(j).getBarrio(),equiposManana.get(j).getDisponibilidad());
-                Partido pI = new Partido(e1,e2, LocalDate.now().plusWeeks(1),"manana");
+    public void enfrentarManana() {
+        for (int i = 0; i < equiposManana.size(); i++) {
+            for (int j = i + 1; j < equiposManana.size(); j++) {
+                Equipo e1 = equiposManana.get(i);
+                Equipo e2 = equiposManana.get(j);
+                Partido partido = new Partido(e1, e2, LocalDate.now().plusWeeks(1), "manana");
+                partidos.add(partido);
             }
         }
     }
-    public void enfrentarTarde(){
-        for (int i = 0; i < equiposManana.size()-1; i++) {
-            for (int j = 1; j < equiposManana.size(); j++) {
-                Equipo e1 = new Equipo(equiposManana.get(i).getNombre(),equiposManana.get(i).getBarrio(),equiposManana.get(i).getDisponibilidad());
-                Equipo e2 = new Equipo(equiposManana.get(j).getNombre(),equiposManana.get(j).getBarrio(),equiposManana.get(j).getDisponibilidad());
-                Partido pI = new Partido(e1,e2, LocalDate.now().plusWeeks(1),"tarde");
+    public void enfrentarTarde() {
+        for (int i = 0; i < equiposTarde.size(); i++) {
+            for (int j = i + 1; j < equiposTarde.size(); j++) {
+                Equipo e1 = equiposTarde.get(i);
+                Equipo e2 = equiposTarde.get(j);
+                Partido partido = new Partido(e1, e2, LocalDate.now().plusWeeks(1), "tarde");
+                partidos.add(partido);
             }
         }
     }
-    public void enfrentarNoche(){
-        for (int i = 0; i < equiposManana.size()-1; i++) {
-            for (int j = 1; j < equiposManana.size(); j++) {
-                Equipo e1 = new Equipo(equiposManana.get(i).getNombre(),equiposManana.get(i).getBarrio(),equiposManana.get(i).getDisponibilidad());
-                Equipo e2 = new Equipo(equiposManana.get(j).getNombre(),equiposManana.get(j).getBarrio(),equiposManana.get(j).getDisponibilidad());
-                Partido pI = new Partido(e1,e2, LocalDate.now().plusWeeks(1),"noche");
+    public void enfrentarNoche() {
+        for (int i = 0; i < equiposNoche.size(); i++) {
+            for (int j = i + 1; j < equiposNoche.size(); j++) {
+                Equipo e1 = equiposNoche.get(i);
+                Equipo e2 = equiposNoche.get(j);
+                Partido partido = new Partido(e1, e2, LocalDate.now().plusWeeks(1), "noche");
+                partidos.add(partido);
             }
         }
     }
 
+    public static void main(String[] args) {
+        Jugador j1 = new Jugador("alberto",LocalDate.of(2008,1,21),47);
+        Equipo eq1 = new Equipo();
+        Equipo eq2 = new Equipo("viejardas","coghlan","tarde");
+        Equipo eq3 = new Equipo("amor&paz","lugano","manana");
+        Equipo eq4 = new Equipo("marota","pueyrredon","manana");
+
+        ArrayList<Equipo> aEquipos = new ArrayList<>();
+        aEquipos.add(eq1);
+        aEquipos.add(eq2);
+        aEquipos.add(eq3);
+        aEquipos.add(eq4);
+
+        Campeonato c1 = new Campeonato(aEquipos);
+        c1.filtrarTurno();
+        c1.enfrentarManana();
+        c1.enfrentarTarde();
+        c1.enfrentarNoche();
+        eq1.agregarJugador(j1);
+        eq1.definirCapitan(j1);
+
+    }
 }

@@ -49,9 +49,12 @@ public class Estanteria {
         System.out.println("la peli no esta");
     }
 
-    public ArrayList<Persona> directoresExitosos(){
-        ArrayList <Persona> directoresE = new ArrayList<>();
-        for (int i = 0; i < peliculas.size(); i++) {
+    public void todosLosDirectores(){
+        ArrayList <Persona> directores = new ArrayList<>();
+        
+    }
 
-        }
+    public ArrayList<Persona> directoresExitosos() {
+
+    }
 }

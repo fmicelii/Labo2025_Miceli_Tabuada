@@ -1,4 +1,4 @@
-package VideoClub;
+package Peliculas;
 
 import SeresVivos.Persona;
 

@@ -1,22 +1,35 @@
-package VideoClub;
+package Peliculas;
+
+import SeresVivos.Persona;
 
 import java.util.ArrayList;
 
-public class Sede {
+public class VideoClub {
+    private int comuna;
     private String direccion;
     private int codPostal;
     private ArrayList <Estanteria> estanterias;
 
-    public Sede(){
+    public VideoClub(){
+        this.comuna = 12;
         this.direccion = "tamborini 3574";
         this.codPostal = 1416;
         this.estanterias = new ArrayList<>();
     }
 
-    public Sede(String direccion, int codPostal, ArrayList<Estanteria> estanterias) {
+    public VideoClub(int comuna, String direccion, int codPostal, ArrayList<Estanteria> estanterias) {
+        this.comuna = comuna;
         this.direccion = direccion;
         this.codPostal = codPostal;
         this.estanterias = estanterias;
+    }
+
+    public int getComuna() {
+        return comuna;
+    }
+
+    public void setComuna(int comuna) {
+        this.comuna = comuna;
     }
 
     public String getDireccion() {
@@ -72,18 +85,5 @@ public class Sede {
             }
         }
         System.out.println("duracion: " + durMax + " nombre de peli: " + " codigo de estante: " + code);
-    }
-
-    public static void main(String[] args) {
-        Sede s1 = new Sede();
-        Estanteria e1 = new Estanteria();
-        Pelicula p1 = new Pelicula();
-        Pelicula p2 = new Pelicula("el retorno del rey");
-        ArrayList<Pelicula> pelis = new ArrayList<>();
-        pelis.add(p1);
-        pelis.add(p2);
-        e1.setPeliculas(pelis);
-        s1.estanterias.add(e1);
-        s1.peliculaLarga();
     }
 }

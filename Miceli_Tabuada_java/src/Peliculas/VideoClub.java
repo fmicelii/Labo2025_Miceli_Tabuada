@@ -1,7 +1,5 @@
 package Peliculas;
 
-import SeresVivos.Persona;
-
 import java.util.ArrayList;
 
 public class VideoClub {

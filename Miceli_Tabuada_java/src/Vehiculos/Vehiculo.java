@@ -1,25 +1,24 @@
-package Objetos;
+package Vehiculos;
 
-public class Coche {
+public class Vehiculo {
     private String marca;
     private String modelo;
     private String color;
-    private float velocidad;
+    private double velocidad;
 
-    public Coche(){
-        this.marca = "renault";
-        this.modelo = "sandero";
-        this.color = "rojo";
+    public Vehiculo(){
+        this.marca = "";
+        this.modelo = "";
+        this.color = "";
         this.velocidad = 0;
     }
 
-    public Coche(String marca,String modelo, String color, float velocidad){
+    public Vehiculo(String marca,String modelo, String color, double velocidad){
         this.marca = marca;
         this.modelo = modelo;
         this.color = color;
         this.velocidad = velocidad;
     }
-
     public String getMarca() {
         return marca;
     }
@@ -44,30 +43,24 @@ public class Coche {
         this.color = color;
     }
 
-    public float getVelocidad() {
+    public double getVelocidad() {
         return velocidad;
     }
 
-    public void setVelocidad(float velocidad) {
+    public void setVelocidad(double velocidad) {
         this.velocidad = velocidad;
     }
 
-    public float acelerar(float velocidad){
+    public double acelerar(double velocidad){
         return velocidad+10;
     }
 
-    public float frenar(float velocidad){
+    public double frenar(double velocidad){
         return velocidad-10;
     }
-    public void mostrarVelocidad(float velocidad){
-        System.out.println("la velocidad es de: " + velocidad);
+
+    public double mostrarVelocidad(){
+        return velocidad;
     }
 
-    public static class Main{
-        public static void main(String[] args){
-            Coche a1 = new Coche("VW","gol","negro",0);
-
-            a1.mostrarVelocidad(a1.velocidad);
-        }
-    }
 }

@@ -1,4 +1,4 @@
-package SeresVivos;
+package Personas;
 
 import java.time.LocalDate;
 
@@ -8,7 +8,6 @@ public class Persona {
     private int dni;
     private LocalDate fechaNacimiento;
     private LocalDate fechaIngreso;
-
     private int edad;
     private String direccion;
 
@@ -101,12 +100,12 @@ public class Persona {
         System.out.println("nombre: " + nombre + ", edad: " + edad + ", direccion: " + direccion);
     }
 
-
     public static void main(String[] args) {
         Persona pe1 = new Persona("Lolo",19,"tomba 6909");
 
         pe1.mostrarDatos();
     }
+
     public int antiguedad(){
         int cantAnos = 0;
         if (fechaIngreso == null){

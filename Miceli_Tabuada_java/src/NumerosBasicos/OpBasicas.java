@@ -1,6 +1,6 @@
 package NumerosBasicos;
 
-import SeresVivos.Persona;
+import Personas.Persona;
 
 import java.util.ArrayList;
 import java.util.Scanner;

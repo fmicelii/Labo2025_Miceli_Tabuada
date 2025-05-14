@@ -1,6 +1,6 @@
 package Peliculas;
 
-import SeresVivos.Persona;
+import Personas.Persona;
 
 import java.util.ArrayList;
 

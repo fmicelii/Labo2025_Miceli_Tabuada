@@ -1,8 +1,7 @@
 package Banco;
 
-import SeresVivos.Persona;
+import Personas.Persona;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class BancoNacion {

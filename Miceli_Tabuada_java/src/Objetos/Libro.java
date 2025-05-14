@@ -1,7 +1,7 @@
 //package Objetos;
 //
 //import Fecha;
-//import SeresVivos.Persona;
+//import Personas.Persona;
 //
 //import java.time.LocalDate;
 //

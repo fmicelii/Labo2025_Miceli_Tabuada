@@ -1,27 +1,36 @@
 package Vehiculos;
 
 public class Coche extends Vehiculo{
-    private String marca;
-    private String modelo;
-    private String color;
-    private double velocidad;
+    private String patente;
+    private boolean esDescapotable;
+
+    public String getPatente() {
+        return patente;
+    }
+
+    public void setPatente(String patente) {
+        this.patente = patente;
+    }
+
+    public boolean isEsDescapotable() {
+        return esDescapotable;
+    }
+
+    public void setEsDescapotable(boolean esDescapotable) {
+        this.esDescapotable = esDescapotable;
+    }
 
     public Coche(){
-        this.marca = "ford";
-        this.modelo = "kuga";
-        this.color = "gris";
-        this.velocidad = 0;
+        super();
+        this.patente = "";
+        this.esDescapotable = true;
     }
 
-    public Coche(String marca,String modelo, String color, double velocidad){
-        super(marca, modelo, color, velocidad);
+    public Coche(String marca,String modelo, String color, double velocidad, int cantRuedas, int anioFabricacion, String patente, boolean esDescapotable){
+        super(marca, modelo, color, velocidad,cantRuedas,anioFabricacion);
+        this.patente = patente;
+        this.esDescapotable = esDescapotable;
     }
 
-    public static class Main{
-        public static void main(String[] args){
-            Coche a1 = new Coche("VW","gol","negro",0);
-
-            a1.mostrarVelocidad();
-        }
-    }
+    public String tipoDeVehiculo(){ return "Coche";}
 }

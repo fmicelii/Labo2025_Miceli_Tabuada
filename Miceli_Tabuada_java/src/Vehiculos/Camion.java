@@ -1,5 +1,7 @@
 package Vehiculos;
 
+import org.w3c.dom.ls.LSOutput;
+
 public class Camion extends Vehiculo{
     private String patente;
     private double capCarga;
@@ -25,7 +27,7 @@ public class Camion extends Vehiculo{
         return carga;
     }
 
-    public void setCarga(double carga) {
+    public void setCarga(double carga){
         this.carga = carga;
     }
 
@@ -50,4 +52,11 @@ public class Camion extends Vehiculo{
             setCarga(capCarga);
         }
     }
+    public void agregarCarga(double cargaAgregada){
+        setCarga(carga += cargaAgregada);
+        if (carga > capCarga){
+            setCarga(capCarga);
+            }
+        }
+
 }

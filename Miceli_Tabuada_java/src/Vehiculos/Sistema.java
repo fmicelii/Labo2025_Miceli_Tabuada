@@ -43,14 +43,22 @@ public class Sistema {
         return  mayorTipoVehiculo;
     }
 
-    public void agregarCargaCamioneta(double cargaAgregada){
-        for (Vehiculo v : flota){
-            String vehi = v.tipoDeVehiculo();
-            if(vehi == "Camion"){
+    public void porcentajeDescapotables(){
+        int cantDescapotables;
+        for(Vehiculo D : flota){
 
-            }
         }
     }
+    public void agregarCargaCamion(double cargaAgregada){
+        for (Vehiculo v : flota){
+            String vehi = v.tipoDeVehiculo();
+            if (vehi.equals("Camion")){
+                v.
+            }
+        }
+
+    }
+
 
     public static void main(String[] args) {
         ArrayList<Vehiculo> flota = new ArrayList<>();

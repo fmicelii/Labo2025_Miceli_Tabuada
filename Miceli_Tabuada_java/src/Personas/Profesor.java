@@ -1,6 +1,6 @@
-package Restaurante;
+package Personas;
 
-public class Profesor extends Persona{
+public class Profesor extends Persona {
     private double porcentajeDescuento;
 
     public Profesor(String apellido, String nombre, double porcentajeDescuento) {

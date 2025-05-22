@@ -6,10 +6,19 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Collections;
 
-
 public class Alumno extends Persona{
     private ArrayList <Integer> notas;
     private ArrayList <Materia> materias;
+    private String division;
+
+    public Alumno(String division){
+        super("","");
+        this.division = division;
+    }
+    public Alumno(String nombre, String apellido, String division){
+        super(nombre, apellido);
+        this.division = division;
+    }
 
     public Alumno(){
         super("lolo","taborda",48392028,LocalDate.now(),"tamborini 3574");
@@ -38,6 +47,14 @@ public class Alumno extends Persona{
 
     public void setMaterias(ArrayList<Materia> materias) {
         this.materias = materias;
+    }
+
+    public String getDivision() {
+        return division;
+    }
+
+    public void setDivision(String division) {
+        this.division = division;
     }
 
     public void agregarNota(){

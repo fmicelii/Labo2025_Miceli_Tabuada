@@ -26,6 +26,10 @@ public class Persona {
         this.edad = edad;
         this.direccion = direccion;
     }
+    public Persona(String nombre, String apellido){
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
 
     public Persona(String nombre, String apellido, int dni, LocalDate fechaNacimiento, LocalDate fechaIngreso) {
         this.nombre = nombre;

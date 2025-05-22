@@ -1,4 +1,6 @@
 package Restaurante;
+import Personas.Persona;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
 

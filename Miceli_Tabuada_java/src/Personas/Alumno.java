@@ -7,7 +7,7 @@ import java.util.Scanner;
 import java.util.Collections;
 
 
-public class Alumno extends Personaa{
+public class Alumno extends Persona{
     private ArrayList <Integer> notas;
     private ArrayList <Materia> materias;
 

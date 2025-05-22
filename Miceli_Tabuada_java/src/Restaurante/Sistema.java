@@ -1,8 +1,9 @@
+/*
 package Restaurante;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class Sistema {
+public class SistemaRestaurante {
 
     private ArrayList<Plato> platos = new ArrayList<>();
     private ArrayList<Pedido> pedidos = new ArrayList<>();
@@ -16,7 +17,7 @@ public class Sistema {
 
             }
 
-            platos.remove();
+
         }
 
         public void modificarPrecioPlato(String nombre, double nuevoPrecio) {
@@ -57,3 +58,4 @@ public class Sistema {
     }
 
 }
+*/

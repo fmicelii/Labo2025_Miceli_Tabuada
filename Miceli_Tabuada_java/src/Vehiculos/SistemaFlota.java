@@ -3,10 +3,10 @@ package Vehiculos;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Sistema {
+public class SistemaFlota {
     private ArrayList<Vehiculo> flota;
 
-    public Sistema(){
+    public SistemaFlota(){
         this.flota = new ArrayList<>();
     }
 
@@ -44,20 +44,30 @@ public class Sistema {
     }
 
     public void porcentajeDescapotables(){
-        int cantDescapotables;
-        for(Vehiculo D : flota){
-
-        }
-    }
-    public void agregarCargaCamion(double cargaAgregada){
-        for (Vehiculo v : flota){
-            String vehi = v.tipoDeVehiculo();
-            if (vehi.equals("Camion")){
-                v.
+        int cantDescapotables = 0;
+        int cantCoches = 0;
+        for(Vehiculo v: flota){
+            if (v instanceof Coche){
+                cantCoches++;
+                Coche c = (Coche) v;
+                if (c.isEsDescapotable()){
+                    cantDescapotables++;
+                }
             }
         }
-
+        double porcentaje = (cantDescapotables / cantCoches) * 100;
+        System.out.println("porcentaje de autos descapotables: " + porcentaje);
     }
+
+    public void agregarCargaCamion(double cargaAgregada) {
+        for (Vehiculo v : flota) {
+            if (v instanceof Camion) {
+                Camion c = (Camion) v;
+                c.agregarCarga(cargaAgregada);
+            }
+        }
+    }
+
 
 
     public static void main(String[] args) {
@@ -70,10 +80,10 @@ public class Sistema {
         Camion ca3 = new Camion();
 
         flota.addAll(Arrays.asList(b1,c1,c2,ca1,ca2,ca3));
-        Sistema s1 = new Sistema();
+        SistemaFlota s1 = new SistemaFlota();
         s1.setFlota(flota);
 
         System.out.println("tipo de vehiculo de mayor cantidad: " + s1.tipoConMayorCantidad());
-
+        s1.porcentajeDescapotables();
     }
 }

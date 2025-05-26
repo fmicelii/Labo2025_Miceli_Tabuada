@@ -19,5 +19,43 @@ public class Pedido {
         this.estaEntregado = estaEntregado;
     }
 
+    public LocalDate getFecha() {
+        return fecha;
+    }
 
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
+    }
+
+    public LocalTime getHoraEntrega() {
+        return horaEntrega;
+    }
+
+    public void setHoraEntrega(LocalTime horaEntrega) {
+        this.horaEntrega = horaEntrega;
+    }
+
+    public Plato getPlato() {
+        return plato;
+    }
+
+    public void setPlato(Plato plato) {
+        this.plato = plato;
+    }
+
+    public Persona getSolicitante() {
+        return solicitante;
+    }
+
+    public void setSolicitante(Persona solicitante) {
+        this.solicitante = solicitante;
+    }
+
+    public boolean isEstaEntregado() {
+        return estaEntregado;
+    }
+
+    public void setEstaEntregado(boolean estaEntregado) {
+        this.estaEntregado = estaEntregado;
+    }
 }

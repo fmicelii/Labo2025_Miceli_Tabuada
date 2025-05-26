@@ -68,8 +68,6 @@ public class SistemaFlota {
         }
     }
 
-
-
     public static void main(String[] args) {
         ArrayList<Vehiculo> flota = new ArrayList<>();
         Bicicleta b1 = new Bicicleta();

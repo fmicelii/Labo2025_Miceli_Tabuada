@@ -9,6 +9,11 @@ public class Plato {
         this.precio = precio;
     }
 
+    public Plato(){
+        this.nombre = "hamburguesa";
+        this.precio = 10.0;
+    }
+
     public String getNombre() {
         return nombre;
     }

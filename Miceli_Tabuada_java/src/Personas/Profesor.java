@@ -8,6 +8,11 @@ public class Profesor extends Persona {
         this.porcentajeDescuento = porcentajeDescuento;
     }
 
+    public Profesor(){
+        super("Mariano","Perez");
+        this.porcentajeDescuento = 10.0;
+    }
+
     public Profesor(double porcentajeDescuento) {
         this.porcentajeDescuento = porcentajeDescuento;
     }

@@ -1,15 +1,17 @@
 package Restaurante;
 import Personas.Profesor;
-
 import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
 
 public class SistemaRestaurante {
-
     private ArrayList<Pedido> pedidos = new ArrayList<>();
     private ArrayList<Plato> platos = new ArrayList<>();
 
+    public SistemaRestaurante(ArrayList<Plato> platos, ArrayList<Pedido> pedidos){
+        this.pedidos = pedidos;
+        this.platos = platos;
+    }
     public void agregarPlato(Plato p) {
         platos.add(p);
     }
@@ -53,7 +55,9 @@ public class SistemaRestaurante {
         return platosACocinar;
     }
 
+    public void top3Platos(){
 
+    }
 }
 
 

@@ -1,5 +1,6 @@
 package Restaurante;
 import Personas.Persona;
+import Personas.Profesor;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -17,6 +18,20 @@ public class Pedido {
         this.plato = plato;
         this.solicitante = solicitante;
         this.estaEntregado = estaEntregado;
+    }
+    public Pedido(){
+        this.fecha = LocalDate.now();
+        this.horaEntrega = LocalTime.now();
+        this.plato = null;
+        this.solicitante = new Profesor();
+        this.estaEntregado = false;
+    }
+    public Pedido(Plato plato){
+        this.fecha = LocalDate.now();
+        this.horaEntrega = LocalTime.now();
+        this.plato = plato;
+        this.solicitante = new Profesor();
+        this.estaEntregado = true;
     }
 
     public LocalDate getFecha() {

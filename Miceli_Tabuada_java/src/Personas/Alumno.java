@@ -1,5 +1,4 @@
 package Personas;
-
 import Objetos.Materia;
 import java.time.LocalDate;
 import java.util.ArrayList;

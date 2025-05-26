@@ -1,7 +1,5 @@
 package Personas;
-
 import Objetos.Materia;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -9,28 +7,30 @@ public class Persona {
     private String nombre;
     private String apellido;
     private int dni;
+    private int numeroTelefono;
     private LocalDate fechaNacimiento;
     private LocalDate fechaIngreso;
     private int edad;
     private String direccion;
-
 
     public Persona(){
         this.nombre = "juan";
         this.edad = 18;
         this.direccion = "tamborini 3574";
     }
-
+    public Persona(String nombre, String apellido){
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
+    public Persona(String apellido,int numeroTelefono){
+        this.apellido = apellido;
+        this.numeroTelefono = numeroTelefono;
+    }
     public Persona(String nombre, int edad, String direccion){
         this.nombre = nombre;
         this.edad = edad;
         this.direccion = direccion;
     }
-    public Persona(String nombre, String apellido){
-        this.nombre = nombre;
-        this.apellido = apellido;
-    }
-
     public Persona(String nombre, String apellido, int dni, LocalDate fechaNacimiento, LocalDate fechaIngreso) {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -38,7 +38,6 @@ public class Persona {
         this.fechaNacimiento = fechaNacimiento;
         this.fechaIngreso = fechaIngreso;
     }
-
     public Persona(String nombre, String apellido, int dni, LocalDate fechaNacimiento, String direccion){
         this.nombre = nombre;
         this.apellido = apellido;
@@ -46,7 +45,6 @@ public class Persona {
         this.fechaNacimiento = fechaNacimiento;
         this.direccion = direccion;
     }
-
     public Persona(String nombre, String apellido, int dni, LocalDate fechaNacimiento) {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -113,6 +111,14 @@ public class Persona {
 
     public void mostrarDatos(){
         System.out.println("nombre: " + nombre + ", edad: " + edad + ", direccion: " + direccion);
+    }
+
+    public int getNumeroTelefono() {
+        return numeroTelefono;
+    }
+
+    public void setNumeroTelefono(int numeroTelefono) {
+        this.numeroTelefono = numeroTelefono;
     }
 
     public static void main(String[] args) {

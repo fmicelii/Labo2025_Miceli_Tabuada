@@ -13,9 +13,11 @@ public class SensorCompuesto{
     public double sumaMedida(){
         return (st.getMedida() + sh.getMedida() + sp.getMedida()) / 3;
     }
+    public double sumaUmbral(){
+        return (st.getUmbrialInicial() + sh.getUmbrialInicial() + sp.getUmbrialInicial()) / 3;
+    }
     public void comprobarMedidaCompuesta(){
-        double umbralCompuesto = (st.getUmbrialInicial() + sh.getUmbrialInicial() + sp.getUmbrialInicial()) / 3;
-        if (sumaMedida() > umbralCompuesto){
+        if (sumaMedida() > sumaUmbral()){
             st.comprobarMedida();
             sh.comprobarMedida();
             sp.comprobarMedida();

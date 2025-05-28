@@ -43,8 +43,6 @@ public class Compra {
         return salidas.size();
     }
 
-    public boolean actualizarStock() {
+    //public boolean actualizarStock() {}
+}
 
-    }
-}
-}

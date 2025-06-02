@@ -12,11 +12,19 @@ public class Persona {
     private LocalDate fechaIngreso;
     private int edad;
     private String direccion;
+    private String pais;
 
     public Persona(){
         this.nombre = "juan";
         this.edad = 18;
         this.direccion = "tamborini 3574";
+    }
+    public Persona(int dni){
+        this.nombre = "";
+        this.apellido = "";
+        this.numeroTelefono = 1100000000;
+        this.dni = dni;
+        this.pais = "";
     }
     public Persona(String nombre, String apellido){
         this.nombre = nombre;
@@ -119,6 +127,14 @@ public class Persona {
 
     public void setNumeroTelefono(int numeroTelefono) {
         this.numeroTelefono = numeroTelefono;
+    }
+
+    public String getPais() {
+        return pais;
+    }
+
+    public void setPais(String pais) {
+        this.pais = pais;
     }
 
     public static void main(String[] args) {

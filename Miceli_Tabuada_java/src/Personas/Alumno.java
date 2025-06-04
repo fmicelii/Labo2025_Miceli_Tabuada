@@ -8,13 +8,13 @@ import java.util.Collections;
 public class Alumno extends Persona{
     private ArrayList <Integer> notas;
     private ArrayList <Materia> materias;
-    private String division;
+    private Division division;
 
-    public Alumno(String division){
+    public Alumno(Division division){
         super("","");
         this.division = division;
     }
-    public Alumno(String nombre, String apellido, String division){
+    public Alumno(String nombre, String apellido, Division division){
         super(nombre, apellido);
         this.division = division;
     }
@@ -48,11 +48,11 @@ public class Alumno extends Persona{
         this.materias = materias;
     }
 
-    public String getDivision() {
+    public Division getDivision() {
         return division;
     }
 
-    public void setDivision(String division) {
+    public void setDivision(Division division) {
         this.division = division;
     }
 

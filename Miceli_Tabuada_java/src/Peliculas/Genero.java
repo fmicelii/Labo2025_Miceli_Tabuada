@@ -1,0 +1,5 @@
+package Peliculas;
+
+public enum Genero {
+    ACCION,COMEDIA,CIENCIA_FICCION,PORNO,ROMCOM,DRAMA,POLICIAL,DOCUMENTAL;
+}

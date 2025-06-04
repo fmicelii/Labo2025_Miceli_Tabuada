@@ -10,7 +10,6 @@ public class Campeonato {
     private ArrayList <Equipo> equiposNoche;
     private ArrayList <Partido> partidos;
 
-
     public Campeonato(ArrayList<Equipo> equipos, ArrayList<Partido> partidos, ArrayList<Equipo> equiposManana, ArrayList<Equipo> equiposTarde, ArrayList<Equipo> equiposNoche) {
         this.equipos = equipos;
         this.partidos = partidos;
@@ -68,9 +67,9 @@ public class Campeonato {
 
     public void filtrarTurno(){
         for (Equipo equipo : equipos) {
-            if (equipo.getDisponibilidad().equals("manana")) {
+            if (equipo.getDisponibilidad().equals(Turno.MAÑANA)) {
                 equiposManana.add(equipo);
-            } else if (equipo.getDisponibilidad().equals("tarde")) {
+            } else if (equipo.getDisponibilidad().equals(Turno.TARDE)) {
                 equiposTarde.add(equipo);
             } else {
                 equiposNoche.add(equipo);
@@ -82,7 +81,7 @@ public class Campeonato {
             for (int j = i + 1; j < equiposManana.size(); j++) {
                 Equipo e1 = equiposManana.get(i);
                 Equipo e2 = equiposManana.get(j);
-                Partido partido = new Partido(e1, e2, LocalDate.now().plusWeeks(1), "manana");
+                Partido partido = new Partido(e1, e2, LocalDate.now().plusWeeks(1), Turno.MAÑANA);
                 partidos.add(partido);
             }
         }
@@ -92,7 +91,7 @@ public class Campeonato {
             for (int j = i + 1; j < equiposTarde.size(); j++) {
                 Equipo e1 = equiposTarde.get(i);
                 Equipo e2 = equiposTarde.get(j);
-                Partido partido = new Partido(e1, e2, LocalDate.now().plusWeeks(1), "tarde");
+                Partido partido = new Partido(e1, e2, LocalDate.now().plusWeeks(1), Turno.TARDE);
                 partidos.add(partido);
             }
         }
@@ -102,7 +101,7 @@ public class Campeonato {
             for (int j = i + 1; j < equiposNoche.size(); j++) {
                 Equipo e1 = equiposNoche.get(i);
                 Equipo e2 = equiposNoche.get(j);
-                Partido partido = new Partido(e1, e2, LocalDate.now().plusWeeks(1), "noche");
+                Partido partido = new Partido(e1, e2, LocalDate.now().plusWeeks(1), Turno.NOCHE);
                 partidos.add(partido);
             }
         }
@@ -111,9 +110,9 @@ public class Campeonato {
     public static void main(String[] args) {
         Jugador j1 = new Jugador("alberto",LocalDate.of(2008,1,21),47);
         Equipo eq1 = new Equipo();
-        Equipo eq2 = new Equipo("viejardas","coghlan","tarde");
-        Equipo eq3 = new Equipo("amor&paz","lugano","manana");
-        Equipo eq4 = new Equipo("marota","pueyrredon","manana");
+        Equipo eq2 = new Equipo("viejardas","coghlan",Turno.TARDE);
+        Equipo eq3 = new Equipo("amor&paz","lugano",Turno.NOCHE);
+        Equipo eq4 = new Equipo("marota","pueyrredon",Turno.MAÑANA);
 
         ArrayList<Equipo> aEquipos = new ArrayList<>();
         aEquipos.add(eq1);

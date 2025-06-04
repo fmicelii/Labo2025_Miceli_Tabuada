@@ -6,9 +6,9 @@ public class Partido {
     private Equipo equipo1;
     private Equipo equipo2;
     private LocalDate fecha;
-    private String turno;
+    private Turno turno;
 
-    public Partido(Equipo equipo1, Equipo equipo2, LocalDate fecha, String turno) {
+    public Partido(Equipo equipo1, Equipo equipo2, LocalDate fecha, Turno turno) {
         this.equipo1 = equipo1;
         this.equipo2 = equipo2;
         this.fecha = fecha;
@@ -39,11 +39,11 @@ public class Partido {
         this.fecha = fecha;
     }
 
-    public String getTurno() {
+    public Turno getTurno() {
         return turno;
     }
 
-    public void setTurno(String turno) {
+    public void setTurno(Turno turno) {
         this.turno = turno;
     }
 }

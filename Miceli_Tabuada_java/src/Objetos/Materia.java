@@ -2,27 +2,27 @@ package Objetos;
 import java.util.ArrayList;
 
 public class Materia {
-    private String nombre;
+    private NombreMateria nombre;
     private ArrayList <String> listaDeContenidos;
     private ArrayList <String> alumnosInscriptos;
 
     public Materia(){
-        this.nombre = "historia";
+        this.nombre = NombreMateria.HISTORIA;
         this.listaDeContenidos.add("revolucion industrial");
         this.listaDeContenidos.add("la maquina de river");
         this.alumnosInscriptos.add("Lopez");
     }
-    public Materia(String nombre, ArrayList<String> listaDeContenidos, ArrayList<String> alumnosInscriptos) {
+    public Materia(NombreMateria nombre, ArrayList<String> listaDeContenidos, ArrayList<String> alumnosInscriptos) {
         this.nombre = nombre;
         this.listaDeContenidos = listaDeContenidos;
         this.alumnosInscriptos = alumnosInscriptos;
     }
 
-    public String getNombre() {
+    public NombreMateria getNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    public void setNombre(NombreMateria nombre) {
         this.nombre = nombre;
     }
 
@@ -41,7 +41,6 @@ public class Materia {
     public void setAlumnosInscriptos(ArrayList<String> alumnosInscriptos) {
         this.alumnosInscriptos = alumnosInscriptos;
     }
-
 
     public static void main(String[] args) {
 

@@ -12,7 +12,7 @@ public class Persona {
     private LocalDate fechaIngreso;
     private int edad;
     private String direccion;
-    private String pais;
+    private Pais pais;
 
     public Persona(){
         this.nombre = "juan";
@@ -24,7 +24,7 @@ public class Persona {
         this.apellido = "";
         this.numeroTelefono = 1100000000;
         this.dni = dni;
-        this.pais = "";
+        this.pais = Pais.ARGENTINA;
     }
     public Persona(String nombre, String apellido){
         this.nombre = nombre;
@@ -117,6 +117,14 @@ public class Persona {
         this.direccion = direccion;
     }
 
+    public void setPais(Pais pais) {
+        this.pais = pais;
+    }
+
+    public Pais getPais() {
+        return pais;
+    }
+
     public void mostrarDatos(){
         System.out.println("nombre: " + nombre + ", edad: " + edad + ", direccion: " + direccion);
     }
@@ -127,14 +135,6 @@ public class Persona {
 
     public void setNumeroTelefono(int numeroTelefono) {
         this.numeroTelefono = numeroTelefono;
-    }
-
-    public String getPais() {
-        return pais;
-    }
-
-    public void setPais(String pais) {
-        this.pais = pais;
     }
 
     public static void main(String[] args) {

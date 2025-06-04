@@ -1,4 +1,4 @@
-package Objetos;
+package Canciones;
 
 public class Cancion {
     private String titulo;

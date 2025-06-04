@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Pelicula {
     private String nombre;
-    private String genero;
+    private Genero genero;
     private int duracion;
     private ArrayList <Persona> directores;
     private ArrayList <Persona> actores;
@@ -14,7 +14,7 @@ public class Pelicula {
 
     public Pelicula(){
         this.nombre = "el imperio contraataca";
-        this.genero = "ficcion";
+        this.genero = Genero.CIENCIA_FICCION;
         this.duracion = 120;
         this.directores = new ArrayList<>();
         this.actores = new ArrayList<>();
@@ -23,14 +23,14 @@ public class Pelicula {
 
     public Pelicula(String nombre){
         this.nombre = nombre;
-        this.genero = "ficcion";
+        this.genero = Genero.ACCION;
         this.duracion = 120;
         this.directores = new ArrayList<>();
         this.actores = new ArrayList<>();
         this.idiomas = new ArrayList<>();
     }
 
-    public Pelicula(String nombre, String genero, int duracion, ArrayList<Persona> directores, ArrayList<Persona> actores, ArrayList<String> idiomas) {
+    public Pelicula(String nombre, Genero genero, int duracion, ArrayList<Persona> directores, ArrayList<Persona> actores, ArrayList<String> idiomas) {
         this.nombre = nombre;
         this.genero = genero;
         this.duracion = duracion;
@@ -47,11 +47,11 @@ public class Pelicula {
         this.nombre = nombre;
     }
 
-    public String getGenero(){
+    public Genero getGenero() {
         return genero;
     }
 
-    public void setGenero(String genero){
+    public void setGenero(Genero genero) {
         this.genero = genero;
     }
 

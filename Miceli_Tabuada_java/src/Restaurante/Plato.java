@@ -1,24 +1,24 @@
 package Restaurante;
 
 public class Plato {
-    private String nombre;
+    private NombrePlato nombre;
     private double precio;
 
-    public Plato(String nombre, double precio) {
+    public Plato(NombrePlato nombre, double precio) {
         this.nombre = nombre;
         this.precio = precio;
     }
 
     public Plato(){
-        this.nombre = "hamburguesa";
+        this.nombre = NombrePlato.ARROZ;
         this.precio = 10.0;
     }
 
-    public String getNombre() {
+    public NombrePlato getNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    public void setNombre(NombrePlato nombre) {
         this.nombre = nombre;
     }
 

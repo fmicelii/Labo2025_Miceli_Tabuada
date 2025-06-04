@@ -1,4 +1,4 @@
-package Objetos;
+package Canciones;
 import java.util.ArrayList;
 
 public class CD {

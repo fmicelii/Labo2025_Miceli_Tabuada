@@ -1,5 +1,7 @@
 package Torneo;
 
+import Biblioteca.Editorial;
+
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -7,24 +9,23 @@ public class Equipo {
     private String nombre;
     private String barrio;
     private ArrayList<Jugador> jugadores;
-    private String disponibilidad;
+    private Turno disponibilidad;
     private Jugador capitan;
 
     public Equipo(){
         this.nombre = "viejardos";
         this.barrio = "coghlan";
         this.jugadores = new ArrayList<>();
-        this.disponibilidad = "tarde";
+        this.disponibilidad = Turno.TARDE;
         this.capitan = null;
     }
 
-    public Equipo(String nombre, String barrio, String disponibilidad){
+    public Equipo(String nombre, String barrio, Turno disponibilidad) {
         this.nombre = nombre;
         this.barrio = barrio;
-        this.jugadores = new ArrayList<>();
         this.disponibilidad = disponibilidad;
-        this.capitan = null;
     }
+
     public String getNombre() {
         return nombre;
     }
@@ -49,11 +50,11 @@ public class Equipo {
         this.jugadores = jugadores;
     }
 
-    public String getDisponibilidad() {
+    public Turno getDisponibilidad() {
         return disponibilidad;
     }
 
-    public void setDisponibilidad(String disponibilidad) {
+    public void setDisponibilidad(Turno disponibilidad) {
         this.disponibilidad = disponibilidad;
     }
 
@@ -82,6 +83,7 @@ public class Equipo {
             System.out.println("no se pudo agregar jugador");
         }
     }
+
     public void definirCapitan(Jugador jugador){
         for (Jugador jugadorcito : jugadores){
             if (Objects.equals(jugador, jugadorcito)) {
@@ -91,5 +93,4 @@ public class Equipo {
         }
         System.out.println("el jugador no esta en la lista del equipo papi");
     }
-
 }

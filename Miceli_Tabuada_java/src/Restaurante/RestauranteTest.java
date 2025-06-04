@@ -13,8 +13,8 @@ public class RestauranteTest {
     public void testAgregarPlato(){
         Alumno alumno1 = new Alumno();
         Profesor profesor1 = new Profesor();
-        Plato plato1 = new Plato("Sushi", 2500.00);
-        Plato plato2 = new Plato("Pizza", 1500.00);
+        Plato plato1 = new Plato(NombrePlato.HAMBURGUESA, 2500.00);
+        Plato plato2 = new Plato(NombrePlato.PIZZA, 1500.00);
         ArrayList <Plato> platos = new ArrayList<>();
         platos.add(plato1);
         platos.add(plato2);

@@ -1,6 +1,4 @@
 package Telefonia;
-import Personas.EmpleadoTelefonia;
-
 import java.util.ArrayList;
 import java.util.Objects;
 

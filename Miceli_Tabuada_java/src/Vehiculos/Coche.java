@@ -1,5 +1,7 @@
 package Vehiculos;
 
+import Colores.Color;
+
 public class Coche extends Vehiculo{
     private String patente;
     private boolean esDescapotable;
@@ -26,7 +28,7 @@ public class Coche extends Vehiculo{
         this.esDescapotable = true;
     }
 
-    public Coche(String marca,String modelo, String color, double velocidad, int cantRuedas, int anioFabricacion, String patente, boolean esDescapotable){
+    public Coche(String marca, String modelo, Color color, double velocidad, int cantRuedas, int anioFabricacion, String patente, boolean esDescapotable){
         super(marca, modelo, color, velocidad,cantRuedas,anioFabricacion);
         this.patente = patente;
         this.esDescapotable = esDescapotable;

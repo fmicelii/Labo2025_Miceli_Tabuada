@@ -2,9 +2,6 @@ package Telefonia;
 import org.junit.Test;
 import java.time.LocalDate;
 import java.util.ArrayList;
-
-import static junit.framework.Assert.assertSame;
-import static junit.framework.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SistemaTelefoniaTest {

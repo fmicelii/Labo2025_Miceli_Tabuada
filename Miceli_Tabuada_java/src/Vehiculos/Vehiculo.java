@@ -2,7 +2,7 @@ package Vehiculos;
 
 import Colores.Color;
 
-public class Vehiculo {
+public abstract class Vehiculo {
     private String marca;
     private String modelo;
     private Color color;
@@ -89,17 +89,11 @@ public class Vehiculo {
         this.anioFabricacion = anioFabricacion;
     }
 
-    public double acelerar(double velocidad){
-        return velocidad+10;
-    }
+    public abstract double acelerar(double velocidad);
 
-    public double frenar(double velocidad){
-        return velocidad-10;
-    }
+    public abstract double frenar(double velocidad);
 
-    public double mostrarVelocidad(){
-        return velocidad;
-    }
+    public abstract double mostrarVelocidad();
 
-    public String tipoDeVehiculo(){ return "";}
+    public abstract String tipoDeVehiculo();
 }

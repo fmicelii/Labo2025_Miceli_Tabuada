@@ -1,17 +1,13 @@
 package MetodosDePago;
 
-public class MetodoDePago {
+public abstract class MetodoDePago {
     double monto;
 
     public MetodoDePago(double monto){
         this.monto = monto;
     }
 
-    public double getMonto(){
-        return monto;
-    }
+    public abstract double getMonto();
 
-    public void setMonto(double monto){
-        this.monto = monto;
-    }
+    public abstract void setMonto(double monto);
 }

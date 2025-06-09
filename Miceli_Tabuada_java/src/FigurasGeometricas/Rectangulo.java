@@ -26,15 +26,18 @@ public class Rectangulo extends FiguraGeometrica{
         this.altura = altura;
     }
 
-    public float calcularArea(float base, float altura){
+    @Override
+    public double calcularArea() {
         float area = base * altura;
         return area;
     }
 
-    public float calcularPerimetro(float base, float altura){
+    @Override
+    public double calcularPerimetro() {
         float perimetro = 2*base + 2*altura;
         return perimetro;
     }
+
     //MAIN
     public static class Main{
         public static void main(String[] args){
@@ -42,8 +45,8 @@ public class Rectangulo extends FiguraGeometrica{
 
             System.out.println("base: " + r1.getBase());
             System.out.println("altura: " + r1.getAltura());
-            System.out.println("area calculada: " + r1.calcularArea(r1.base, r1.altura));
-            System.out.println("perimetro calculada: " + r1.calcularPerimetro(r1.base, r1.altura));
+            System.out.println("area calculada: " + r1.calcularArea(r1.getBase(), r1.getAltura()));
+            System.out.println("perimetro calculada: " + r1.calcularPerimetro(r1.getBase(), r1.getAltura()));
         }
     }
 }

@@ -28,6 +28,21 @@ public class Coche extends Vehiculo{
         this.esDescapotable = true;
     }
 
+    @Override
+    public double acelerar(double velocidad) {
+        return 0;
+    }
+
+    @Override
+    public double frenar(double velocidad) {
+        return 0;
+    }
+
+    @Override
+    public double mostrarVelocidad() {
+        return 0;
+    }
+
     public Coche(String marca, String modelo, Color color, double velocidad, int cantRuedas, int anioFabricacion, String patente, boolean esDescapotable){
         super(marca, modelo, color, velocidad,cantRuedas,anioFabricacion);
         this.patente = patente;

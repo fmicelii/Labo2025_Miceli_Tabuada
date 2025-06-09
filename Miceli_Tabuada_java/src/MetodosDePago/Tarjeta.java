@@ -11,4 +11,14 @@ public class Tarjeta extends MetodoDePago{
         this.codigoSeguridad = codigoSeguridad;
         this.propietario = propietario;
     }
+
+    @Override
+    public double getMonto() {
+        return 0;
+    }
+
+    @Override
+    public void setMonto(double monto) {
+
+    }
 }

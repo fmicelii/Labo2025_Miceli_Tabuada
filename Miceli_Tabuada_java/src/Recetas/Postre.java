@@ -28,7 +28,7 @@ public class Postre extends Receta{
         this.aptoDiabetico = aptoDiabetico;
     }
 
-    public void MotrarPasosRecordatorios(){
+    public void mostrarInstrucciones(){
         for (String p : super.getPasos()){
             System.out.println("- " + p);
             System.out.println("Recordá mantener la cocina limpia y el horno al mínimo.");

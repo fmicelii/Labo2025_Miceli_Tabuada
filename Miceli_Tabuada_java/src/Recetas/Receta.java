@@ -36,4 +36,5 @@ public abstract class Receta {
     public void setPasos(ArrayList<String> pasos) {
         this.pasos = pasos;
     }
+    abstract void mostrarInstrucciones();
 }

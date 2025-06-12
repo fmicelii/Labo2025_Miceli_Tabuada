@@ -6,21 +6,34 @@ public abstract class Dron {
     private Estado estado;
     private String nombreModelo;
     private LocalDate fechaAdquisicion;
-    private int nivelCarga;
     private static int contador = 0;
     private int id;
     private int bateria;
     private static double latitudOrigen = -34.573195;
     private static double longitudOrigen = -58.504111;
+    private double latitudDestino;
+    private double longitudDestino;
 
-    public Dron(Estado estado, String nombreModelo, LocalDate fechaAdquisicion, int nivelCarga, int id, int bateria) {
+    public Dron(Estado estado, String nombreModelo, LocalDate fechaAdquisicion, int nivelCarga, int id, int bateria, double latitudDestino, double longitudDestino) {
         this.estado = estado;
         this.nombreModelo = nombreModelo;
         this.fechaAdquisicion = fechaAdquisicion;
-        this.nivelCarga = nivelCarga;
-        this.id = getContador();
         Dron.setContador(Dron.getContador()+1);
+        this.id = getContador();
         this.bateria = bateria;
+        this.latitudDestino = latitudDestino;
+        this.longitudDestino = longitudDestino;
+    }
+
+    public Dron(){
+        this.estado = Estado.OPERATIVO;
+        this.nombreModelo = "sompapa";
+        this.fechaAdquisicion = LocalDate.now();
+        Dron.setContador(Dron.getContador()+1);
+        this.id = getContador();
+        this.bateria = 50;
+        this.latitudDestino = -34.633500;
+        this.longitudDestino = -58.429200;
     }
 
     public static int getContador() {
@@ -39,6 +52,13 @@ public abstract class Dron {
         this.estado = estado;
     }
 
+    public boolean comprobarEstado(){
+        if (estado.name().equals("EN_VUELO") || estado.name().equals("OPERATIVO")){
+            return true;
+        }
+        return false;
+    }
+
     public String getNombreModelo() {
         return nombreModelo;
     }
@@ -53,14 +73,6 @@ public abstract class Dron {
 
     public void setFechaAdquisicion(LocalDate fechaAdquisicion) {
         this.fechaAdquisicion = fechaAdquisicion;
-    }
-
-    public int getNivelCarga() {
-        return nivelCarga;
-    }
-
-    public void setNivelCarga(int nivelCarga) {
-        this.nivelCarga = nivelCarga;
     }
 
     public int getId() {

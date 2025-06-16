@@ -2,9 +2,9 @@ package EjerciciosCurso.DukeChoice;
 
 public class Clothing {
     private String description;
-    private double price;
-    private double minPrice = 10.0;
-    private double tax = 1.2;
+    private double price; // son static porque (teoricamente) no van a cambiar
+    static double minPrice = 10.0;
+    static double tax = 1.2; // son static porque (teoricamente) no van a cambiar
     private String size = "M";
 
     public Clothing(String description, double price, String size) {
@@ -37,5 +37,8 @@ public class Clothing {
 
     public void setSize(String size) {
         this.size = size;
+    }
+    public String toString(){
+        return getDescription() + ", " + getPrice() + ", " + getSize();
     }
 }

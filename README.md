@@ -1,6 +1,6 @@
 
 
-# Ejercicios
+# Ejercicios de Labooo
 Acá se subirán todos los ejercicios correspondientes a las unidades del Laboratorio de Programación Orientado a Objetos 2025.
 
 <details markdown="block">

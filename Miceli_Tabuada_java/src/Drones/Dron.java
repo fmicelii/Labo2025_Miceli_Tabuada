@@ -14,7 +14,7 @@ public abstract class Dron {
     private double latitudDestino;
     private double longitudDestino;
 
-    public Dron(Estado estado, String nombreModelo, LocalDate fechaAdquisicion, int nivelCarga, int id, int bateria, double latitudDestino, double longitudDestino) {
+    public Dron(Estado estado, String nombreModelo, LocalDate fechaAdquisicion, int bateria, double latitudDestino, double longitudDestino) {
         this.estado = estado;
         this.nombreModelo = nombreModelo;
         this.fechaAdquisicion = fechaAdquisicion;
@@ -113,6 +113,22 @@ public abstract class Dron {
 
     public static void setLongitudOrigen(double longitudOrigen) {
         Dron.longitudOrigen = longitudOrigen;
+    }
+
+    public static double calcularDistancia(double latitudOrigen, double longitudOrigen, double latitudDestino, double longitudDestino) {
+        double lat1Rad = Math.toRadians(latitudOrigen);    // Latitud del punto de origen
+        double lon1Rad = Math.toRadians(longitudOrigen);   // Longitud del punto de origen
+        double lat2Rad = Math.toRadians(latitudDestino);   // Latitud del punto de destino
+        double lon2Rad = Math.toRadians(longitudDestino);  // Longitud del punto de destino
+
+        double dLat = lat2Rad - lat1Rad;
+        double dLon = lon2Rad - lon1Rad;
+
+        double a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(lat1Rad) * Math.cos(lat2Rad) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        double radioTierraKm = 6371;
+
+        return radioTierraKm * c; // Resultado en kilómetros (double)
     }
 
     abstract boolean esExitosa();

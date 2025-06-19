@@ -2,8 +2,8 @@ package EjerciciosCurso.DukeChoice;
 
 public class Clothing {
     private String description;
-    private double price; // son static porque (teoricamente) no van a cambiar
-    static double minPrice = 10.0;
+    private double price;
+    static double minPrice = 10.0; // son static porque (teoricamente) no van a cambiar
     static double tax = 1.2; // son static porque (teoricamente) no van a cambiar
     private String size = "M";
 

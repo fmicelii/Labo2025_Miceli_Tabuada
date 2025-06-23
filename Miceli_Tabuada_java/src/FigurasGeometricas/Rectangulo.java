@@ -27,14 +27,14 @@ public class Rectangulo extends FiguraGeometrica{
     }
 
     @Override
-    public double calcularArea() {
-        float area = base * altura;
+    public double calcularArea(float base, float altura) {
+        float area = this.base * this.altura;
         return area;
     }
 
     @Override
-    public double calcularPerimetro() {
-        float perimetro = 2*base + 2*altura;
+    public double calcularPerimetro(float base, float altura) {
+        float perimetro = 2* this.base + 2* this.altura;
         return perimetro;
     }
 

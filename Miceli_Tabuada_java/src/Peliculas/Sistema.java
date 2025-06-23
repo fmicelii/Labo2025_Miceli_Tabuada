@@ -56,7 +56,7 @@ public class Sistema {
         return vcPeliculero;
     }
 
-    public void peliculasPorGenero(String gen){
+    public void peliculasPorGenero(Genero gen){
         for (int i = 0; i < videoClubs.size(); i++) {
             System.out.println("video club de la direccion: " + videoClubs.get(i).getDireccion());
             for (int j = 0; j < videoClubs.get(i).getEstanterias().size(); j++) {

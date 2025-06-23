@@ -70,14 +70,10 @@ public class SistemaFlota {
 
     public static void main(String[] args) {
         ArrayList<Vehiculo> flota = new ArrayList<>();
-        Bicicleta b1 = new Bicicleta();
         Coche c1 = new Coche();
         Coche c2 = new Coche();
-        Camion ca1 = new Camion();
-        Camion ca2 = new Camion();
-        Camion ca3 = new Camion();
 
-        flota.addAll(Arrays.asList(b1,c1,c2,ca1,ca2,ca3));
+        flota.addAll(Arrays.asList(c1,c2));
         SistemaFlota s1 = new SistemaFlota();
         s1.setFlota(flota);
 

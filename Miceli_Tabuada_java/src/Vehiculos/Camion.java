@@ -1,8 +1,9 @@
 package Vehiculos;
 
+import Colores.Color;
 import org.w3c.dom.ls.LSOutput;
 
-public class Camion extends Vehiculo{
+abstract class Camion extends Vehiculo{
     private String patente;
     private double capCarga;
     private double carga;
@@ -38,7 +39,7 @@ public class Camion extends Vehiculo{
         this.carga = 0;
     }
 
-    public Camion(String marca,String modelo, String color, double velocidad, int cantRuedas, int anioFabricacion, String patente, double capCarga, double carga){
+    public Camion(String marca, String modelo, Color color, double velocidad, int cantRuedas, int anioFabricacion, String patente, double capCarga, double carga){
         super(marca, modelo, color, velocidad,cantRuedas,anioFabricacion);
         this.patente = patente;
         this.capCarga = capCarga;

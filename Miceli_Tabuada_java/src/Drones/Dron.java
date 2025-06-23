@@ -147,7 +147,7 @@ public abstract class Dron {
         this.longitudDestino = longitudDestino;
     }
 
-    public void asignarMision(double latitudDestino, double longitudDestino){
+    public void asignarDestino(double latitudDestino, double longitudDestino){
         setLatitudDestino(latitudDestino);
         setLongitudDestino(longitudDestino);
     }

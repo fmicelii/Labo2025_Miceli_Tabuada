@@ -24,9 +24,9 @@ public class DeCarga extends Dron{
 
     public boolean esExitosa(double longOrigen, double latiOrigen, double longDestido, double latiDestino){
         if (comprobarEstado()){
-            asignarMision(latiDestino, longDestido);
+            asignarDestino(latiDestino, longDestido);
             if (calcularDistancia( latiOrigen, longOrigen, latiDestino, longDestido) <= 30.0){
-                setBateria(getBateria()-48);
+                setBateria(getBateria()-50);
                 if (getBateria() < 0){
                     setBateria(0);
                     return false;

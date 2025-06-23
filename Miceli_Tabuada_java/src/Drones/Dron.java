@@ -131,5 +131,26 @@ public abstract class Dron {
         return radioTierraKm * c; // Resultado en kilómetros (double)
     }
 
-    abstract boolean esExitosa();
+    public double getLatitudDestino() {
+        return latitudDestino;
+    }
+
+    public void setLatitudDestino(double latitudDestino) {
+        this.latitudDestino = latitudDestino;
+    }
+
+    public double getLongitudDestino() {
+        return longitudDestino;
+    }
+
+    public void setLongitudDestino(double longitudDestino) {
+        this.longitudDestino = longitudDestino;
+    }
+
+    public void asignarMision(double latitudDestino, double longitudDestino){
+        setLatitudDestino(latitudDestino);
+        setLongitudDestino(longitudDestino);
+    }
+
+    abstract boolean esExitosa(double longOrigen, double latiOrigen, double longDestido, double latiDestino);
 }

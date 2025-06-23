@@ -22,11 +22,21 @@ public class DeCarga extends Dron{
         this.carga = carga;
     }
 
-    public boolean esExitosa(){
+    public boolean esExitosa(double longOrigen, double latiOrigen, double longDestido, double latiDestino){
         if (comprobarEstado()){
-
-        }
-        else {
+            asignarMision(latiDestino, longDestido);
+            if (calcularDistancia( latiOrigen, longOrigen, latiDestino, longDestido) <= 30.0){
+                setBateria(getBateria()-48);
+                if (getBateria() < 0){
+                    setBateria(0);
+                    return false;
+                } else {
+                    return true;
+                }
+            } else {
+                return false;
+            }
+        } else {
             return false;
         }
     }

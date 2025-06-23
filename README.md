@@ -380,7 +380,7 @@ Por último, los drones también tienen en común que podrán ejecutar misiones 
 
 Lo que hacen los drones de carga es guardar el peso de la carga que llevan y, al ejecutar una misión, en caso de que esté a 30 km o menos quiere decir que va a ser 3 viajes de ida y vuelta que le repercute en un 48% de batería. Si tiene la capacidad para hacerlo, entonces la misión será exitosa, sino no.
 
-Para los drones de vigilancia tienen guardados la cantidad de memoria que tiene su sd. Entonces, deberán viajar hasta el destino y cada 2 km guardar una foto de la zona en la sd que ocupa 12 Mb. Se debe chequear antes de empezar la misión si tiene almacenamiento para realizarlo o no. 
+Lo que hacen los drones de carga es guardar el peso de la carga que llevan y, al ejecutar una misión, en caso de que esté a 30 km o menos quiere decir que va a ser 3 viajes de ida y vuelta que le repercute en un 50% de batería. Si tiene la capacidad para hacerlo, entonces la misión será exitosa, sino no.
 
 _Sugerencia_: Utilizar el algoritmo de abajo que permite calcular la distancia en km en linea recta de un punto a otro 
 

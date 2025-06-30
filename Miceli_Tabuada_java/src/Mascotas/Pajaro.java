@@ -10,7 +10,7 @@ public class Pajaro extends Mascota {
     }
     public void Saludar(String mascota, String dueno){
         if (esElDueno(mascota, dueno)) {
-            System.out.println(saludar());
+            System.out.println(saludo);
         } else {
             System.out.println("");
         }

@@ -1,9 +1,11 @@
 package Mascotas;
 
 public class Perro extends Mascota{
+    private int alegria;
     private static String saludo = "guau";
-    public Perro(String nombre, String nombreDueno) {
+    public Perro(String nombre, String nombreDueno, int alegria) {
         super(nombre, nombreDueno);
+        this.alegria = alegria;
     }
     public String saludar(){
         return "guau";
@@ -15,4 +17,9 @@ public class Perro extends Mascota{
             System.out.println(saludar().toUpperCase() + "!");
         }
     }
+
+    public void Alimentar(){
+        alegria ++;
+    }
+
 }

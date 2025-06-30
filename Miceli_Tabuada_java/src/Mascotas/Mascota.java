@@ -35,4 +35,6 @@ public abstract class Mascota {
             return false;
         }
     }
+
+    abstract void Alimentar();
 }

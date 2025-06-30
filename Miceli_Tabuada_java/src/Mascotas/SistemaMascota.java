@@ -47,9 +47,9 @@ public class SistemaMascota {
     }
 
     public static void main(String[] args) {
-        Perro perrito1 = new Perro("pedro","juliansito");
-        Gato gatito1 = new Gato("lulo","sofi");
-        Pez pecesito1 = new Pez("dory","lolo");
+        Perro perrito1 = new Perro("pedro","juliansito", 3);
+        Gato gatito1 = new Gato("lulo","sofi",3);
+        Pez pecesito1 = new Pez("dory","lolo",10);
 
         SistemaMascota s1 = new SistemaMascota();
         s1.agregarMascota(perrito1);

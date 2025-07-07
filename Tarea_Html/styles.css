@@ -1,8 +1,0 @@
-.mi-boton {
-    border-color: 2px solid rgb(214, 0, 46); 
-    background-color: transparent;
-    color: rgb(214, 0, 46); /* si necesitás cambiar el texto */
-  }
-  .selector-for-some-widget {
-    box-sizing: content-box;
-  }

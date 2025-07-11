@@ -1,6 +1,16 @@
 body{
     background: #222;
+    padding-top: 56px;
 }
 main{
-    margin: 8px 15px;
+    margin: 8px 35px;
+}
+h2{
+    padding-top: 10px;
+}
+.adaptar-card{
+    text-decoration: none;
+}
+.adaptar-card:hover .card-text{
+    opacity: 70%;
 }

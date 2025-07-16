@@ -32,13 +32,13 @@ footer{
 .carousel-inner,
 .carousel-item,
 .carousel-item img {
-  height: 80vh;
-  object-fit:cover; 
+    height: 80vh;
+    object-fit:cover; 
 }
 .carousel-caption span,
 .carousel-caption p,
 .carousel-caption h1 {
-  color: white !important;
+    color: white !important;
 }
 h1{
     font-size: 9rem;
@@ -46,8 +46,34 @@ h1{
 .contenido-general{
     display: flex;
     flex-direction: column;
-    max-width: 1330px;
+    margin: auto;
 }
 .mtb-6 {
-  margin: 4rem 0;
+    margin: 4rem 0;
+}
+
+@media (max-width: 576px) {
+    .contenido-general{
+        max-width: 340px;
+    }
+}
+@media (min-width: 768px) {
+    .contenido-general{
+        max-width: 720px;
+    }
+}
+@media (min-width: 992px) {
+    .contenido-general{
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px) {
+    .contenido-general{
+        max-width: 1140px;
+    }
+}
+@media (min-width: 1400px) {
+    .contenido-general{
+        max-width: 1320px;
+    }
 }

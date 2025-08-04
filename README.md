@@ -467,6 +467,7 @@ Cada persona tiene una lista de bebidas que consumió indicando bebida y cantida
 > ​  Coeficiente resultante para 2 cocas = 2 x [1 - (5 x 10)] = -98  
 > ​  Coeficiente resultante total = 60 + (-98) = -38
 >
+</details>
 
 
 <details markdown="block">
@@ -558,7 +559,4 @@ Tener en cuenta que en nuestro mundo se guardan una lista de Continentes. A real
   - Continente con menos población
 
 Adicionalmente se debe poder calcular la persona con mejor y con peor coeficiente de hidratación y un método para que el usuario elija que bebida consumir y la cantidad.
-</details>
-
-
 </details>

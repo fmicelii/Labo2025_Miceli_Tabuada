@@ -471,7 +471,7 @@ Cada persona tiene una lista de bebidas que consumió indicando bebida y cantida
 
 
 <details markdown="block">
-<summary><strong>Unidad 5 - Modificadores</strong></summary>
+<summary><strong>Unidad 6 - HashMaps y HashSets</strong></summary>
   
 ### 1. Vacunatorio
 

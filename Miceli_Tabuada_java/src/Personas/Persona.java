@@ -61,6 +61,13 @@ public class Persona {
         this.fechaIngreso = null;
     }
 
+    public Persona(int dni, String nombre, String apellido, String direccion) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.direccion = direccion;
+    }
+
     public String getNombre() {
         return nombre;
     }

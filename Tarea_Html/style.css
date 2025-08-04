@@ -2,9 +2,20 @@ body{
     background: #222;
     padding-top: 56px;
 }
-
 footer{
     margin-top: 50px;
+}
+.carousel,
+.carousel-inner,
+.carousel-item,
+.carousel-item img {
+    height: 80vh;
+    object-fit:cover; 
+}
+.carousel-caption span,
+.carousel-caption p,
+.carousel-caption h1 {
+    color: white !important;
 }
 .adaptar-card{
     text-decoration: none;
@@ -27,18 +38,6 @@ footer{
 .container a{
     margin: 0 10px 1rem 10px;
     color: #eee;
-}
-.carousel,
-.carousel-inner,
-.carousel-item,
-.carousel-item img {
-    height: 80vh;
-    object-fit:cover; 
-}
-.carousel-caption span,
-.carousel-caption p,
-.carousel-caption h1 {
-    color: white !important;
 }
 h1{
     font-size: 9rem;

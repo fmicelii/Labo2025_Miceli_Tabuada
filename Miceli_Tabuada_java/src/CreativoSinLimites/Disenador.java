@@ -42,7 +42,10 @@ public class Disenador extends Persona {
     }
 
     public int conocerPrecio(Proyecto proyectoAConocer){
-        return proyectoAConocer.getPrecio();
+        if (proyectos.contains(proyectoAConocer)){
+            return proyectoAConocer.getPrecio();
+        }
+        return 0;
     }
 
     public void sueldoDiscriminado(Disenador d){

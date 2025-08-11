@@ -32,11 +32,11 @@ public class Disenador extends Persona {
         this.proyectos = proyectos;
     }
 
-    public int conocerSueldo(int dni){
-        int sueldoTotal = 0;
+    public double conocerSueldo(Disenador d){
+        double sueldoTotal = 0;
         for (Proyecto p : proyectos){
             sueldoTotal += p.getPrecio();
-
+            sueldoTotal = sueldoTotal * d.getTipoDisenador().getComision();
         }
         return sueldoTotal;
     }
@@ -45,9 +45,11 @@ public class Disenador extends Persona {
         return proyectoAConocer.getPrecio();
     }
 
-    public void sueldoDiscriminado(){
+    public void sueldoDiscriminado(Disenador d){
         for (Proyecto p : proyectos){
-
+            System.out.println("nombre del proyecto: " + p.getNombre());
+            System.out.println("cuanto se ganó (con comision): " + (p.getPrecio()*d.getTipoDisenador().getComision()));
+            System.out.println("cuanto representa la comision: " + (p.getPrecio()*(d.getTipoDisenador().getComision() - 1)));
         }
     }
 }

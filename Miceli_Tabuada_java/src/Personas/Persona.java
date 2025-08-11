@@ -14,6 +14,7 @@ public class Persona {
     private String direccion;
     private Pais pais;
 
+
     public Persona(){
         this.nombre = "juan";
         this.edad = 18;
@@ -67,6 +68,7 @@ public class Persona {
         this.apellido = apellido;
         this.direccion = direccion;
     }
+
 
     public String getNombre() {
         return nombre;

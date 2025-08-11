@@ -5,6 +5,7 @@ import Personas.Vacunado;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 
 public class SistemaVacunatorio {
     private HashMap<Integer,Vacunado> mapaVacunados;
@@ -47,10 +48,19 @@ public class SistemaVacunatorio {
         HashMap<Provincia,Integer> mapaProvincia = new HashMap<>();//provincia y la cantidad de vacunados
         for (Vacunado v : mapaVacunados.values()){
             if (mapaProvincia.containsKey(v.getProvincia())){
-                int actualizado=mapaProvincia.get(v.getProvincia())+1;
+                int actualizado = mapaProvincia.get(v.getProvincia())+1;
                 mapaProvincia.put(v.getProvincia(),actualizado);
             } else{
                 mapaProvincia.put(v.getProvincia(),1);
+            }
+        }
+    }
+    public void ciudadanosConNVacunas(int cantidad) {
+        System.out.println("Ciudadanos con al menos " + cantidad + " vacunas:");
+        for (Vacunado v : mapaVacunas.keySet()) {
+            HashSet<Vacuna> vacunas = mapaVacunas.get(v);
+            if (vacunas != null && vacunas.size() >= cantidad) {
+                System.out.println("- " + v.getNombre() + " " + v.getApellido() + " DNI: " + v.getDni());
             }
         }
     }

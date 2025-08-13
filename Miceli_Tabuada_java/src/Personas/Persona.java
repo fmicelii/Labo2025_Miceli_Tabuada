@@ -75,6 +75,11 @@ public class Persona {
         this.fechaNacimiento = fechaNacimiento;
     }
 
+    public Persona(String nombre, LocalDate fechaNacimiento) {
+        this.nombre = nombre;
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
     public String getNombre() {
         return nombre;
     }

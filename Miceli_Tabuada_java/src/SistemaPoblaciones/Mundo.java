@@ -18,19 +18,13 @@ public class Mundo extends Lugar{
         this.continentes = continentes;
     }
 
-    public int calcularPoblacion(){
+    public int calcularPoblacion() {
         int total = 0;
-        for (Continente cont : continentes){
-            for (Pais p : cont.getPaises()){
-                for (ProvinciaEstado pe : p.getProvincias_estados()){
-                    for (Ciudad c : pe.getCiudades()){
-                        for (Barrio b : c.getBarrios()){
-                            total += b.getPoblacion();
-                        }
-                    }
-                }
-            }
+        for (Continente cont : continentes) {
+            total += cont.calcularPoblacion();
         }
         return total;
     }
+
+
 }

@@ -20,12 +20,8 @@ public class Pais extends Lugar{
 
     public int calcularPoblacion(){
         int total = 0;
-        for (ProvinciaEstado pe : provincias_estados){
-            for (Ciudad c : pe.getCiudades()){
-                for (Barrio b : c.getBarrios()){
-                    total += b.getPoblacion();
-                }
-            }
+        for (ProvinciaEstado pe : provincias_estados) {
+            total += pe.calcularPoblacion();
         }
         return total;
     }

@@ -20,11 +20,10 @@ public class ProvinciaEstado extends Lugar{
 
     public int calcularPoblacion(){
         int total = 0;
-        for (Ciudad c : ciudades){
-            for (Barrio b : c.getBarrios()){
-                total += b.getPoblacion();
-            }
+        for (Ciudad c : ciudades) {
+            total += c.calcularPoblacion();
         }
         return total;
     }
+
 }

@@ -19,9 +19,10 @@ public class Ciudad extends Lugar{
     }
 
     public int calcularPoblacion(){
-        int population = 0;
+        int total = 0;
         for (Barrio b : barrios){
-
+            total += b.getPoblacion();
         }
+        return total;
     }
 }

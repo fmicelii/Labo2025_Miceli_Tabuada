@@ -5,7 +5,7 @@ import java.util.HashSet;
 public class Ciudad extends Lugar{
     private HashSet<Barrio> barrios;
 
-    public Ciudad(String nombre, double latitud, double longitud, HashSet<Barrio> barrops) {
+    public Ciudad(String nombre, double latitud, double longitud, HashSet<Barrio> barrios) {
         super(nombre, latitud, longitud);
         this.barrios = barrios;
     }
@@ -14,7 +14,7 @@ public class Ciudad extends Lugar{
         return barrios;
     }
 
-    public void setBarrops(HashSet<Barrio> barrios) {
+    public void setBarrios(HashSet<Barrio> barrios) {
         this.barrios = barrios;
     }
 

@@ -25,4 +25,24 @@ public class Continente extends Lugar{
         }
         return total;
     }
+
+    public Pais masPoblado(){
+        Pais elMasPoblado = null;
+        for (Pais p : paises) {
+            if (elMasPoblado == null || p.calcularPoblacion() > elMasPoblado.calcularPoblacion()) {
+                elMasPoblado = p;
+            }
+        }
+        return elMasPoblado;
+    }
+
+    public Pais menosPoblado(){
+        Pais elMenosPoblado = null;
+        for (Pais p : paises) {
+            if (elMenosPoblado == null || p.calcularPoblacion() < elMenosPoblado.calcularPoblacion()) {
+                elMenosPoblado = p;
+            }
+        }
+        return elMenosPoblado;
+    }
 }

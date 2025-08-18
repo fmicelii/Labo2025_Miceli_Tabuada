@@ -46,4 +46,5 @@ public abstract class Lugar {
     }
 
     public abstract int calcularPoblacion();
+
 }

@@ -1,6 +1,7 @@
 
 
-# Ejercicios de Labooo https://github.com/ProfesLabo5to/Ejercicios
+  
+# Ejercicios
 Acá se subirán todos los ejercicios correspondientes a las unidades del Laboratorio de Programación Orientado a Objetos 2025.
 
 <details markdown="block">
@@ -351,7 +352,7 @@ La tienda administra todos estos productos por lo que deberán crear los método
 
 <details markdown="block">
 <summary><strong>Unidad 5 - Modificadores</strong></summary>
-
+  
 ### 1. Ejercicios anteriores
 Hacer las modificaciones necesarias en cada una de las clases y método ya resueltas durante el año para que sean abstractas o estáticos si es necesario. 
 
@@ -378,9 +379,9 @@ Todos los drones podrán recargar la batería: donde se asume que cada vez que s
 
 Por último, los drones también tienen en común que podrán ejecutar misiones y comunicar al sistema si pueden realizarla con éxito o no. La misión se ejecuta dependiendo si son drones de carga o de vigilancia y en ambos casos se indica la latitud y longitud a la cual se tienen que dirigir. Todos parten desde el Poli (Latitud: -34.573195, Longitud: -58.504111)
 
-Lo que hacen los drones de carga es guardar el peso de la carga que llevan y, al ejecutar una misión, en caso de que esté a 30 km o menos quiere decir que va a ser 3 viajes de ida y vuelta que le repercute en un 48% de batería. Si tiene la capacidad para hacerlo, entonces la misión será exitosa, sino no.
-
 Lo que hacen los drones de carga es guardar el peso de la carga que llevan y, al ejecutar una misión, en caso de que esté a 30 km o menos quiere decir que va a ser 3 viajes de ida y vuelta que le repercute en un 50% de batería. Si tiene la capacidad para hacerlo, entonces la misión será exitosa, sino no.
+
+Para los drones de vigilancia tienen guardados la cantidad de memoria que tiene su sd. Entonces, deberán viajar hasta el destino y cada 2 km guardar una foto de la zona en la sd que ocupa 12 Mb. Se debe chequear antes de empezar la misión si tiene almacenamiento para realizarlo o no. 
 
 _Sugerencia_: Utilizar el algoritmo de abajo que permite calcular la distancia en km en linea recta de un punto a otro 
 
@@ -406,7 +407,6 @@ return radioTierraKm * c;
 Vamos a manejar una aplicación de mascotas. Estas pueden ser: perros, gatos, pájaros. 
 
 Todas las mascotas tienen un nombre y un dueño (el nombre de la mascota debe ser único). Cada una tiene un saludo en particular:  
-
 - Para los perros el saludo es “guau”  
 - Para los gatos el saludo es “miau”  
 - Para los pajaritos el saludo es “pio
@@ -466,18 +466,48 @@ Cada persona tiene una lista de bebidas que consumió indicando bebida y cantida
 > ​  Coeficiente resultante para 3 aguas = 3 x (20 - 0) = 60  
 > ​  Coeficiente resultante para 2 cocas = 2 x [1 - (5 x 10)] = -98  
 > ​  Coeficiente resultante total = 60 + (-98) = -38
->
+
+Adicionalmente se debe poder calcular la persona con mejor y con peor coeficiente de hidratación y un método para que el usuario elija que bebida consumir y la cantidad.
 </details>
 
+<details markdown="block">
+<summary><strong> Ejercicio repaso evaluación unidades 3, 4 y 5</strong></summary>
+  
+### 1. Gestión de tickets:
+
+Tenemos un sistema que se ocupa de revisar la VTV de los autos que circulan por la ciudad. Se compone de Software y dispositivos como cámaras, radares y camiones. Cuando algo no funciona como debería, o un usuario no entiende una funcionalidad, o se quieren agregar cosas nuevas se pueden emitir Tickets. Estos le informan a la empresa desarrolladora qué está pasando con su sistema. 
+
+Vamos a modelar la gestión de tickets de soporte técnico para este sistema. Todos los tickets tienen un cliente asignado, una descripción, una fecha y hora de creación, fecha y hora de finalización, una lista de comentarios donde los desarrolladores van a ir registrando anotaciones y estado del ticket: abierto, en progreso, resuelto, cerrado, cancelado. 
+
+Es importante que los tickets puedan cambiar su estado, que se puedan agregar comentarios por parte del desarrollador y que se puedan resolver. Tener en cuenta que al cambiar de estado o, si se resuelve el ticket, hacer todas las modificaciones necesarias 
+
+Los tickets pueden ser de hardware o de software. Para los de hardware vamos a guardar dispositivo y la forma de resolverlo es corroborando si hay repuestos disponibles para ese dispositivo. Si hay repuestos y el ticket estaba en progreso, cambiarlo a resuelto y retornar true, sino retornar false. 
+
+Los tickets de software guardan el software sobre el que se está emitiendo el ticket y estos tienen una cantidad máxima de intentos de resolución que es igual para todos y es de 3 intentos. Para poder resolverlo, si el software tiene un parche aplicable y todavía restan intentos, entonces si estaba en progreso pasa a resuelto y retorna true. Si alguna de las dos condicionas falla, retorna false.  
+
+Como parte de la gestión, tendremos una lista con los tickets de software y de hardware y los desarrolladores. Se querrá conocer: 
+
+- Cantidad de tickets en un determinado estado. 
+- Cantidad de tickets totales. 
+- Ticket más antiguo que aún no ha sido agarrado por ningún desarrollador (es decir, el estado es abierto) 
+- Desarrollador que más tickets resuelve. 
+- Tickets asignados a un desarrollador determinado. 
+- Desarrollador más antiguo en el sistema. 
+- Dado un ticket determinado, conocer el o los desarrolladores asignados a resolverlo. 
+- El tiempo promedio de resolución de los tickets en general. Para hacerlo calcular la diferencia entre fecha de resolución y fecha de creación y luego el promedio (Sugerencia: utilizar clase Duration)  
+
+Resolver el sistema que responda de manera correcta a todas las funcionalidades mediante programación orientado a objetos. Incluir main. 
+
+</details>
 
 <details markdown="block">
-<summary><strong>Unidad 6 - HashMaps y HashSets</strong></summary>
+<summary><strong> Unidad 6 - HashMaps y HashSets </strong></summary>
   
 ### 1. Vacunatorio
 
 Se va a realizar una campaña nacional de vacunación y nos piden un sistema para registrar los ciudadanos ya vacunados. 
 
-De cada ciudadano tenemos dni, nombre y apellido, provincia de residencia, domicilio y mail de contacto. A su vez, las vacunas tienen una fecha de fabricación, fecha d eaplicación, numero de lote, numero de fabricacion y nombre comercial.
+De cada ciudadano tenemos dni, nombre y apellido, provincia de residencia, domicilio y mail de contacto. A su vez, las vacunas tienen una fecha de fabricación, fecha de aplicación, numero de lote, numero de fabricacion y nombre comercial.
 
 Se solicita poder tener en nuestro sistema lo necesario para que nos facilite:
 - Registrar una vacuna aplicada a un ciudadano.
@@ -558,5 +588,57 @@ Tener en cuenta que en nuestro mundo se guardan una lista de Continentes. A real
   - Continente con más población
   - Continente con menos población
 
-Adicionalmente se debe poder calcular la persona con mejor y con peor coeficiente de hidratación y un método para que el usuario elija que bebida consumir y la cantidad.
 </details>
+
+---
+
+## Unidad 7 - Manejo de excepciones
+
+### 1. Ejecutar el siguiente fragmento de código:  
+
+```java
+public class Main {  
+    public static void Main(String[] args) {  
+        String nombre = null;  
+        System.out.println("El largo del nombre es:" + nombre.length);  
+    }  
+}
+```
+Resolver la excepción de cuatro formas diferentes. Siempre al final del programa 	habrá que mostrar el nombre de ustedes a modo de firma:  
+- Bloque try/catch.  
+- Throw. 
+- Throws. 
+- Clase personalizada.
+
+### 2. Sistemas de alarmas (ejercicio 5, unidad 3)
+
+Dado el ejercicio de sistema de alarmas que tiene un edificio (ejercicio 5, unidad 3), habrá que permitirle al usuario que pueda elegir de cuál de todos los dispositivos quiere obtener más información.  
+
+Para esto habrá que pedirle al usuario que ingrese un número desde el 0 hasta la cantidad de alarmas que estén registradas. Acorde al número que elija es el dispositivo que se mostrará. 
+
+Deberán tener en cuenta en la implementación que no se corte la ejecución del programa si el usuario no ingresa un número entero o ingresa un número mayor a la cantidad de dispositivos que hay instalados en el edificio. 
+
+### 3. Sistema componentes de pc (ejercicio 4, unidad 3)
+
+Agregarle al sistema de compras de componentes de computadora (ejercicio 4, unidad 3) las excepciones necesarias para que el usuario sepa si no hay stock de los componentes que eligió y lanzar una excepción en caso de que al hacer la compra falte uno de los componentes principales (una CPU, un dispositivo de entrada y uno de salida). 
+
+### 4. Biblioteca virtual
+
+Vamos a hacer un programa que me permita gestionar una biblioteca virtual con libros electrónicos, autores, usuarios y préstamos. 
+
+Los géneros de los libros pueden ser: ficción, no ficción, aventura, ciencia ficción, saga y romance. Los libros van a ser escritos por un autor del cual interesa conocer el nombre, la fecha de nacimiento, el dni y su bibliografía (todos los libros que escribió). 
+
+De cada libro electrónico se guardará el título, el autor, el género, el nombre del archivo pdf y la cantidad de descargas disponibles que tiene: 145 (es igual para todos los libros). 
+
+Los usuarios de la plataforma se registran ingresando nombre, fecha de nacimiento, DNI, mail y el tipo de membresía que tiene. Si es bronce podrá tener hasta 5 libros prestados, Plata como mucho 15 libros y si es oro 50 préstamos activos. 
+
+El sistema debe gestionar los préstamos y devoluciones de libros electrónicos. Si un usuario intenta tomar prestado un libro que ya ha alcanzado el límite, se debe lanzar una excepción personalizada (LimiteDePrestamosAlcanzadoException). Así como hay que lanzar la excepción (‘MembresiaException’) si el usuario ya alcanzó su cupo de libros que puede tomar prestados simultáneamente. 
+
+Además, hacer los métodos necesarios para poder agregar, borrar o modificar nuevos libros. En la clase 'Main' crea instancias de autores, libros electrónicos, usuarios y bibliotecarios para poder realizar operaciones de préstamo y devolución, y maneja las excepciones adecuadamente. 
+
+### 5. Sistema de bebidas (ejercicio 5, unidad 5)
+
+Añadir al ejercicio 3 de la unidad 6 el manejo de excepciones para corroborar que: 
+- Al añadir personas al sistema ya no exista ese dni. 
+- Encuentre la bebida que quiere consumir y tenga esa cantidad que solicita. 
+- Existen personas registradas para determinar el de mejor y peor coeficiente de hidratación. 

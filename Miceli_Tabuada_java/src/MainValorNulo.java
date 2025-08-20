@@ -16,9 +16,8 @@ public class MainValorNulo {
         try {
             if (nombre == null){
                 throw new NullPointerException("estas referenciando a una variable NULA tontin");
-            }else {
-                System.out.println("el largo es :" + nombre.length());
             }
+            System.out.println("el largo es :" + nombre.length());
         }catch (NullPointerException e){
             System.err.println(e);
         }
@@ -36,16 +35,11 @@ public class MainValorNulo {
         }
     }
 
-    public void bloquePersonalizado(String nombre)throws ValorNuloException{
+    public void bloquePersonalizado(String nombre) throws ValorNuloException{
         if (nombre == null){
             throw new ValorNuloException("el valor del nombre es nulo");
-        }else {
-            System.out.println("la cantidad de letras es de:" + nombre.length());
         }
-
-        try {
-
-        }
+        System.out.println("la cantidad de letras es de:" + nombre.length());
     }
 
     public static void main(String[] args) throws Exception {

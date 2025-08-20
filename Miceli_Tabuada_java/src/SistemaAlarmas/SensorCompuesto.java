@@ -1,9 +1,9 @@
 package SistemaAlarmas;
 
 public class SensorCompuesto{
-    SensorTemperatura st;
-    SensorHumo sh;
-    SensorPresion sp;
+    private SensorTemperatura st;
+    private SensorHumo sh;
+    private SensorPresion sp;
 
     public SensorCompuesto(SensorTemperatura st, SensorHumo sh, SensorPresion sp){
         this.st = st;

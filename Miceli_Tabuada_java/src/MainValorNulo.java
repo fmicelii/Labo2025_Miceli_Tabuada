@@ -4,10 +4,8 @@ public class MainValorNulo {
 
     public void bloqueTryCatch(String nombre){
         try{
-            //excepcion de una referenciacion a un puntero nulo
             System.out.println("El largo del nombre es:" + nombre.length());
         }catch(NullPointerException exc){
-            //capturamos la excepcion
             System.err.println("se referencia a un puntero nulo, dale un valor man osea bro dale");
         }
     }
@@ -23,11 +21,11 @@ public class MainValorNulo {
         }
     }
 
-    public int mostrarLargo(String nombre){
+    public int mostrarLargo(String nombre)throws NullPointerException{
         return nombre.length();
     }
 
-    public void bloqueThrows(String nombre)throws Exception{
+    public void bloqueThrows(String nombre){
         try {
             System.out.println(mostrarLargo(nombre));
         }catch (NullPointerException e){

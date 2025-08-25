@@ -61,23 +61,25 @@ public class Persona {
         this.fechaNacimiento = fechaNacimiento;
         this.fechaIngreso = null;
     }
-
     public Persona(int dni, String nombre, String apellido, String direccion) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
         this.direccion = direccion;
     }
-
     public Persona(String nombre, String apellido, LocalDate fechaNacimiento) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaNacimiento = fechaNacimiento;
     }
-
     public Persona(String nombre, LocalDate fechaNacimiento) {
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
+    }
+    public Persona(String nombre, LocalDate fechaNacimiento, int dni) { //autor
+        this.nombre = nombre;
+        this.fechaNacimiento = fechaNacimiento;
+        this.dni = dni;
     }
 
     public String getNombre() {

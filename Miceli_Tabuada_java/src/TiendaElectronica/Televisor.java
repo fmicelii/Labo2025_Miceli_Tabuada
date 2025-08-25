@@ -4,9 +4,9 @@ public class Televisor extends Electronica {
     private Tecnologia tecnologia;
     private int ResolucionPx;
 
-    public Televisor(String nombre, double precio, int stock, int resolucionPx, Tecnologia tecnologia) {
-        super(nombre, precio, stock);
-        ResolucionPx = resolucionPx;
+    public Televisor(String nombreFabricante, String nombreModelo, double precio, int stock, Tecnologia tecnologia, int resolucionPx) {
+        super(nombreFabricante, nombreModelo, precio, stock);
         this.tecnologia = tecnologia;
+        ResolucionPx = resolucionPx;
     }
 }

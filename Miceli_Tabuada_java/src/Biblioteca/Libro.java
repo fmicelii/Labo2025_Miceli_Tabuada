@@ -10,6 +10,18 @@ public class Libro {
     private Editorial editorial;
     private LocalDate fechaPublicacion;
 
+    private GeneroLibro genero;
+    private String archivoPDF;
+    private static int descargasDisponibles = 145;
+    private Autor autorVirtual;
+
+    public Libro(String titulo, GeneroLibro genero, String archivoPDF, Autor autorVirtual) {
+        this.titulo = titulo;
+        this.genero = genero;
+        this.archivoPDF = archivoPDF;
+        this.autorVirtual = autorVirtual;
+    }
+
     public Libro(String titulo, Persona autor, int isbn, int paginas, Editorial editorial, LocalDate fechaPublicacion) {
         this.titulo = titulo;
         this.autor = autor;
@@ -85,13 +97,48 @@ public class Libro {
         this.fechaPublicacion = fechaPublicacion;
     }
 
-    public void mostrarInfo(){
-        System.out.println("titulo: " + titulo);
-        System.out.println("autor: " + autor.getNombre() + ", " + autor.getEdad() + ", " + autor.getDireccion());
-        System.out.println("ISBN: " + isbn);
-        System.out.println("paginas: " + paginas);
-        System.out.println("editorial: " + editorial);
-        System.out.println("fechaPublicacion: " + LocalDate.now().getDayOfMonth() + ", " + LocalDate.now().getMonth() + ", " + LocalDate.now().getYear());
+    public GeneroLibro getGenero() {
+        return genero;
+    }
+
+    public void setGenero(GeneroLibro genero) {
+        this.genero = genero;
+    }
+
+    public String getArchivoPDF() {
+        return archivoPDF;
+    }
+
+    public void setArchivoPDF(String archivoPDF) {
+        this.archivoPDF = archivoPDF;
+    }
+
+    public static int getDescargasDisponibles() {
+        return descargasDisponibles;
+    }
+
+    public static void setDescargasDisponibles(int descargasDisponibles) {
+        Libro.descargasDisponibles = descargasDisponibles;
+    }
+
+    public Autor getAutorVirtual() {
+        return autorVirtual;
+    }
+
+    public void setAutorVirtual(Autor autorVirtual) {
+        this.autorVirtual = autorVirtual;
+    }
+
+    @Override
+    public String toString() {
+        return "Libro{" +
+                "titulo='" + titulo + '\'' +
+                ", autor=" + autor +
+                ", isbn=" + isbn +
+                ", paginas=" + paginas +
+                ", editorial=" + editorial +
+                ", fechaPublicacion=" + fechaPublicacion +
+                '}';
     }
 
     public void compararFechas(LocalDate fe2){
@@ -110,7 +157,7 @@ public class Libro {
         Libro hobbit = new Libro();
         Libro baston = new Libro("El Baston De Plata", new Persona("lolo", 76, "anashe"));
 
-        hobbit.mostrarInfo();
+        System.out.println(hobbit);
         hobbit.compararFechas(baston.fechaPublicacion);
     }
 }

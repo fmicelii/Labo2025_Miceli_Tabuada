@@ -1,22 +1,32 @@
 package TiendaElectronica;
 
 public class Electronica {
-    private String nombre;
+    private String nombreFabricante;
+    private String nombreModelo;
     private double precio;
     private int stock;
 
-    public Electronica(String nombre, double precio, int stock) {
-        this.nombre = nombre;
+    public Electronica(String nombreFabricante, String nombreModelo, double precio, int stock) {
+        this.nombreFabricante = nombreFabricante;
+        this.nombreModelo = nombreModelo;
         this.precio = precio;
         this.stock = stock;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreFabricante() {
+        return nombreFabricante;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreFabricante(String nombreFabricante) {
+        this.nombreFabricante = nombreFabricante;
+    }
+
+    public String getNombreModelo() {
+        return nombreModelo;
+    }
+
+    public void setNombreModelo(String nombreModelo) {
+        this.nombreModelo = nombreModelo;
     }
 
     public double getPrecio() {

@@ -53,6 +53,16 @@ public class Alarma {
         this.anoAdquisicion = anoAdquisicion;
     }
 
+    @Override
+    public String toString() {
+        return "Alarma{" +
+                "estado=" + estado +
+                ", medida=" + medida +
+                ", umbrialInicial=" + umbrialInicial +
+                ", anoAdquisicion=" + anoAdquisicion +
+                '}';
+    }
+
     public void comprobarMedida(){
         if (medida > umbrialInicial){
             System.out.println("Disparar Alarma");

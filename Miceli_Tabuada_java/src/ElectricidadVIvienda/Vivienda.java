@@ -1,13 +1,24 @@
 package ElectricidadVIvienda;
 
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.Year;
 import java.util.HashMap;
+import java.util.Map;
 
 public abstract class Vivienda {
     private String direccion;
     private int codigoPostal;
     private Duenio dueno;
     //{2019:{Enero, 20},{Fbrero, 20}., 2020: {ENetro, 2}. {sept, 3030}}
-    private HashMap<Integer,HashMap<Mes,Double>> mesConsumo;
+    private HashMap<Year,HashMap<Month,Double>> mesConsumo;
+
+    public Vivienda(String direccion, int codigoPostal, Duenio dueno, HashMap<Year, HashMap<Month, Double>> mesConsumo) {
+        this.direccion = direccion;
+        this.codigoPostal = codigoPostal;
+        this.dueno = dueno;
+        this.mesConsumo = mesConsumo;
+    }
 
     public String getDireccion() {
         return direccion;
@@ -33,15 +44,30 @@ public abstract class Vivienda {
         this.dueno = dueno;
     }
 
-    public HashMap<Integer, HashMap<Mes, Double>> getMesConsumo() {
+    public HashMap<Year, HashMap<Month, Double>> getMesConsumo() {
         return mesConsumo;
     }
 
-    public void setMesConsumo(HashMap<Integer, HashMap<Mes, Double>> mesConsumo) {
+    public void setMesConsumo(HashMap<Year, HashMap<Month, Double>> mesConsumo) {
         this.mesConsumo = mesConsumo;
     }
 
-    public abstract double calcularConsumo(double consumo);
+    public void cargarMesConsumo(LocalDate fecha, double consumo)throws MesCargadoException{
+        if (getMesConsumo().containsKey(fecha.getYear())){
+            if (getMesConsumo().get(fecha.getYear()).containsKey(fecha.getMonth())){
+                throw new MesCargadoException("la fecha ya ha sido ingresada");
+            }else {
+                getMesConsumo().get(fecha.getYear()).put(fecha.getMonth(),consumo);
+            }
+        }else {
+            HashMap<Month,Double> mc = new HashMap<>();
+            mc.put(fecha.getMonth(),consumo);
+            getMesConsumo().put(Year.of(fecha.getYear()),mc);
+        }
+    }
 
-    public abstract double calcularConsumo(Vivienda v, Mes m, int anio);
+
+    public abstract int getDineroXkw();
+
+    public abstract void setDineroXkw(int dineroXkw);
 }

@@ -1,47 +1,19 @@
 package SistemaBebidas;
 
+import Personas.Persona;
+
 import java.util.ArrayList;
 
-public class Persona {
-    private String nombre, apellido;
-    private int DNI, coeficienteHidratacion;
+public class Bebedor extends Persona {
+    private int coeficienteHidratacion;
     private ArrayList<Bebida> bebidasIngeridas;
-    private static Persona def = new Persona("def", "def", 0);
-    private static Persona mejorCoeficiente = def, peorCoeficiente = def;
+    private static Bebedor def = new Bebedor("def", "def", 0);
+    private static Bebedor mejorCoeficiente = def, peorCoeficiente = def;
 
-    public Persona(String nombre, String apellido, int DNI) throws DNIRepetidoException{
-        if ()
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.DNI = DNI;
-        this.bebidasIngeridas = new ArrayList<>();
+    public Bebedor(String nombre, String apellido, int dni) {
+        super(nombre, apellido, dni);
         this.coeficienteHidratacion = 0;
-        mejorCoeficiente();
-        peorCoeficiente();
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public int getDNI() {
-        return DNI;
-    }
-
-    public void setDNI(int DNI) {
-        this.DNI = DNI;
+        this.bebidasIngeridas = new ArrayList<>();
     }
 
     public int getCoeficienteHidratacion() {
@@ -69,7 +41,7 @@ public class Persona {
 
     public void peorCoeficiente(){
         if (this.coeficienteHidratacion < peorCoeficiente.getCoeficienteHidratacion()){
-             peorCoeficiente = this;
+            peorCoeficiente = this;
         }
     }
 

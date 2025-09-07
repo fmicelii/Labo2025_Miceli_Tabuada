@@ -1,6 +1,7 @@
 package TiendaElectronica;
 
 public class Electronica {
+    private int numeroSerie;
     private String nombreFabricante;
     private String nombreModelo;
     private double precio;
@@ -11,6 +12,12 @@ public class Electronica {
         this.nombreModelo = nombreModelo;
         this.precio = precio;
         this.stock = stock;
+    }
+
+    public Electronica(int numeroSerie, String nombreFabricante, String nombreModelo) {
+        this.numeroSerie = numeroSerie;
+        this.nombreFabricante = nombreFabricante;
+        this.nombreModelo = nombreModelo;
     }
 
     public String getNombreFabricante() {

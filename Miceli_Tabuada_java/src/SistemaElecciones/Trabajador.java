@@ -4,7 +4,7 @@ import Personas.Persona;
 
 import java.time.LocalDate;
 
-public class Trabajador extends Persona {
+public class Trabajador extends Persona implements Mensajero{
     private int numeroCuil;
     private double sueldo;
 
@@ -12,6 +12,15 @@ public class Trabajador extends Persona {
         super(nombre, apellido, dni, fechaNacimiento, direccion);
         this.numeroCuil = numeroCuil;
         this.sueldo = sueldo;
+    }
+
+    @Override
+    public String configurarMensaje() throws TelefonoException{
+        if (estaPrendido && tieneCredito){
+            String m = "Conectando con la antena más cercana";
+            return m;
+        }
+        throw new TelefonoException("el telefono no esta prendido o no tiene credito");
     }
 
     public int getNumeroCuil() {

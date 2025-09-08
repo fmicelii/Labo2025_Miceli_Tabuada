@@ -1,6 +1,6 @@
 package FigurasGeometricas;
 
-public class Rectangulo extends FiguraGeometrica{
+public class Rectangulo implements FiguraGeometrica{
     private float base, altura;
 
     public Rectangulo(){
@@ -27,14 +27,14 @@ public class Rectangulo extends FiguraGeometrica{
     }
 
     @Override
-    public double calcularArea(float base, float altura) {
-        float area = this.base * this.altura;
+    public double calcularArea() {
+        float area = getBase() * getAltura();
         return area;
     }
 
     @Override
-    public double calcularPerimetro(float base, float altura) {
-        float perimetro = 2* this.base + 2* this.altura;
+    public double calcularPerimetro() {
+        float perimetro = 2*getBase() + 2*getAltura();
         return perimetro;
     }
 
@@ -45,8 +45,8 @@ public class Rectangulo extends FiguraGeometrica{
 
             System.out.println("base: " + r1.getBase());
             System.out.println("altura: " + r1.getAltura());
-            System.out.println("area calculada: " + r1.calcularArea(r1.getBase(), r1.getAltura()));
-            System.out.println("perimetro calculada: " + r1.calcularPerimetro(r1.getBase(), r1.getAltura()));
+            System.out.println("area calculada: " + r1.calcularArea());
+            System.out.println("perimetro calculada: " + r1.calcularPerimetro());
         }
     }
 }

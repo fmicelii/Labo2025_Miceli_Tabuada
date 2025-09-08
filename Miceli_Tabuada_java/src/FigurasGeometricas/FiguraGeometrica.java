@@ -1,8 +1,8 @@
 package FigurasGeometricas;
 
-public abstract class FiguraGeometrica {
+public interface FiguraGeometrica {
 
-    public abstract double calcularArea(float base, float altura);
+    double calcularArea();
 
-    public abstract double calcularPerimetro(float base, float altura);
+    double calcularPerimetro();
 }

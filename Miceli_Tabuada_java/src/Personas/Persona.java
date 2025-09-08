@@ -14,7 +14,6 @@ public class Persona {
     private String direccion;
     private Pais pais;
 
-
     public Persona(){
         this.nombre = "juan";
         this.edad = 18;

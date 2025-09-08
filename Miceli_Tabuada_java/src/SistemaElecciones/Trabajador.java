@@ -53,7 +53,7 @@ public class Trabajador extends Persona implements Mensajero{
     @Override
     public String configurarMensaje() throws NoEsSuHorarioLaboralException{
         int horaAhora = LocalTime.now().getHour();
-        if (horaAhora > getHoraInicio() && horaAhora < getHoraFinal()){
+        if (horaAhora > getHoraInicio() || horaAhora < getHoraFinal()){
             String m = "Yo, " + getNombre() + " te invito a que… ";
             return m;
         }

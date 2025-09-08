@@ -57,7 +57,7 @@ public class PartidoPolitico {
 
     public void hacerCampania(){
         for (Mensajero m : mensajeros){
-            if (m.getClass() )
+            System.out.println(m.configurarMensaje() + "Vote por el partido para un mejor futuro");
         }
     }
 }

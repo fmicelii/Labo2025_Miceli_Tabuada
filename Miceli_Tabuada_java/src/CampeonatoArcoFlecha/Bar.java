@@ -2,6 +2,7 @@ package CampeonatoArcoFlecha;
 
 import CampeonatoArcoFlecha.Beneficios.Beneficio;
 import CampeonatoArcoFlecha.Beneficios.BeneficioAcumulable;
+import CampeonatoArcoFlecha.Beneficios.BeneficioTrago;
 
 import java.util.HashSet;
 
@@ -60,4 +61,11 @@ public class Bar {
         this.beneficiosAcumulablesImplementados = beneficiosAcumulablesImplementados;
     }
 
+    public int cantBeneficiosTrags(){
+        int contador = 0;
+        for (Beneficio b : beneficiosImplementados){
+            if (b instanceof BeneficioTrago) contador++;
+        }
+        return contador;
+    }
 }

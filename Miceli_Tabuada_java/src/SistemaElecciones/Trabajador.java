@@ -54,8 +54,7 @@ public class Trabajador extends Persona implements Mensajero{
     public String configurarMensaje() throws NoEsSuHorarioLaboralException{
         int horaAhora = LocalTime.now().getHour();
         if (horaAhora > getHoraInicio() || horaAhora < getHoraFinal()){
-            String m = "Yo, " + getNombre() + " te invito a que… ";
-            return m;
+            return "Yo, " + getNombre() + " te invito a que… ";
         }
         throw new NoEsSuHorarioLaboralException("el trabajador no esta en su horario laboral");
     }

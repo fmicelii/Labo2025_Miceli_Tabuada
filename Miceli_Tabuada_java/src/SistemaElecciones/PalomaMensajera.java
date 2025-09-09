@@ -13,8 +13,7 @@ public class PalomaMensajera extends Ave implements Mensajero {
     @Override
     public String configurarMensaje() throws PalomaNoSabeVolarException{
         if (aprendioElMapa){
-            String m = "Lanzando un papelito que dice: ";
-            return m;
+            return "Lanzando un papelito que dice: ";
         }
         throw new PalomaNoSabeVolarException("la paloma es petit y no sabe volar");
     }

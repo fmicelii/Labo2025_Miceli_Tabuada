@@ -19,8 +19,7 @@ public class TelefonoMovil extends Electronica implements Mensajero{
     @Override
     public String configurarMensaje() throws TelefonoException{
         if (estaPrendido && tieneCredito){
-            String m = "Conectando con la antena más cercana";
-            return m;
+            return "Conectando con la antena más cercana";
         }
         throw new TelefonoException("el telefono no esta prendido o no tiene credito");
     }

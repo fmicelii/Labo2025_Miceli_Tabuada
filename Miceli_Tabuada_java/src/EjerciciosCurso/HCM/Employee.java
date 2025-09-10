@@ -1,7 +1,9 @@
 package EjerciciosCurso.HCM;
 
 public class Employee {
+    private int id;
     private String nombre;
+    private double salario;
     private String department;
 
     public Employee(String nombre) {
@@ -13,6 +15,28 @@ public class Employee {
         this.department = "robco";
     }
 
+    public Employee(int id, String nombre, double salario) {
+        this.id = id;
+        this.nombre = nombre;
+        this.salario = salario;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -21,11 +45,8 @@ public class Employee {
         this.nombre = nombre;
     }
 
-    public String getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
+    @Override
+    public String toString() {
+        return "empleado:{id:"+id+", nombre:"+nombre+", salario:"+salario+"}";
     }
 }

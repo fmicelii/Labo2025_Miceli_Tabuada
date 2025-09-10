@@ -49,6 +49,14 @@ public class Customer {
         this.items = cositas;
     }
 
+    public ArrayList<Clothing> getItems() {
+        return items;
+    }
+
+    public void setItems(ArrayList<Clothing> items) {
+        this.items = items;
+    }
+
     public ArrayList <Clothing> returnArray(){
         return items;
     }
@@ -63,5 +71,31 @@ public class Customer {
             if (total > 15.0){break;}
         }
         return total;
+    }
+
+    public void ejercicio7_1(){
+        int promedio = 0,cuenta = 0;
+        for (Clothing c : getItems()){
+            if (c.getSize().equals("L"))
+            cuenta++;
+            promedio += c.getPrice();
+        }
+        try{
+            promedio = promedio/cuenta;
+            System.out.println("promedio: "+promedio+", cuenta: "+cuenta);
+        }catch (ArithmeticException e){
+            System.out.println("dividiendo por 0 bro");
+        }
+    }
+
+    //solucion sin excepcion
+    public double averagePriceItems(){
+        double total = 0;
+        for (Clothing c : items){
+            if(c.getSize().equals("L")){
+                total+= c.getPrice();
+            }
+        }
+        return total/items.size();
     }
 }

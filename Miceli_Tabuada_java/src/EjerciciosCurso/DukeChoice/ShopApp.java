@@ -1,6 +1,7 @@
 package EjerciciosCurso.DukeChoice;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class ShopApp {
     public static void main(String[] args) {
@@ -39,5 +40,14 @@ public class ShopApp {
 
         c1.setSize(3);
         System.out.println(c1.getSize());
+
+        System.out.println("promedio de valor de items: " + c1.averagePriceItems());
+
+        // Ordena automáticamente por descripcion
+        Collections.sort(items);
+
+        for (Clothing c : items) {
+            System.out.println(c);
+        }
     }
 }

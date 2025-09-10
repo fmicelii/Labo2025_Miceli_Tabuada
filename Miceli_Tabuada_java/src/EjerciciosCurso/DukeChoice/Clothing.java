@@ -1,6 +1,6 @@
 package EjerciciosCurso.DukeChoice;
 
-public class Clothing {
+public class Clothing implements Comparable<Clothing>{
     private String description;
     private double price;
     static double minPrice = 10.0; // son static porque (teoricamente) no van a cambiar
@@ -40,5 +40,10 @@ public class Clothing {
     }
     public String toString(){
         return getDescription() + ", " + getPrice() + ", " + getSize();
+    }
+
+    @Override
+    public int compareTo(Clothing c) {
+        return getDescription().compareTo(c.description);
     }
 }

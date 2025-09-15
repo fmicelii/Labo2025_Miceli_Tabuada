@@ -40,11 +40,22 @@ public class Joven extends Paciente implements Tratable{
         this.actividadesDeportivas = actividadesDeportivas;
     }
 
+    public boolean esImpar(int numero) {
+        return numero % 2 != 0;
+    }
+
+    @Override
+    public double costoTratamiento() {
+        if (esImpar(getFechaNacimiento().getYear())){
+            return LocalDate.now().getMonthValue() * 760000;
+        }
+        return LocalDate.now().getDayOfMonth() * 145400; //creo q esta mal, habria q no hardcodear, dsp me fijo lol
+    }
+
     @Override
     public void mensaje() {
-        int act = actividadesDeportivas.size() % 2;
         LocalDate hoy = LocalDate.now();
-        if (act == 1 && Period.between(getFechaNacimiento(),hoy).getYears() > getEdadMaxima()-2){
+        if (esImpar(getActividadesDeportivas().size()) && Period.between(getFechaNacimiento(),hoy).getYears() > getEdadMaxima()-2){
             System.out.println("Lamentamos comunicarte que tu sangre aún no va a poder ser modificada");
         }else {
             System.out.println("Será un tratamiento costoso, pero lo vamos a lograr");

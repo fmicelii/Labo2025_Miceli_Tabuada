@@ -33,7 +33,7 @@ public class Nino extends Paciente implements Tratable{
     }
 
     @Override
-    public boolean mensaje() {
+    public boolean puedeRecibirTratamiento() {
         if (esMayor()){
             System.out.println("Tu tratamiento tardará esta cantidad de días: " + toleranciaMedicamentos*2);
             return true;

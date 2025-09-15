@@ -5,6 +5,7 @@ import Personas.Genero;
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 
 public class SistemaTratamiento {
     private HashMap<Tratable,Integer> pacienteDiasTratandose;
@@ -23,20 +24,16 @@ public class SistemaTratamiento {
         return pacientes;
     }
 
-    /** Incrementa en 1 los días de tratamiento de los pacientes si el mensaje lo permite */
     public void comprobacionDiaria(){
-        for (var t : pacienteDiasTratandose.entrySet()){
-            if (t.getKey().mensaje()) {
+        for (Map.Entry<Tratable,Integer> t : pacienteDiasTratandose.entrySet()){
+            if (t.getKey().puedeRecibirTratamiento()) {
                 t.setValue(t.getValue() + 1);
             }
         }
     }
 
-    /** Devuelve cuántos pacientes NO son tratables (no implementan la interfaz) */
     public int pacientesNoTratables(){
-        return (int) pacientes.stream()
-                .filter(p -> !(p instanceof Tratable))
-                .count();
+        return pacientes.size() - pacienteDiasTratandose.size();
     }
 
     public static void main(String[] args) {

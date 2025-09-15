@@ -53,7 +53,7 @@ public class Joven extends Paciente implements Tratable{
     }
 
     @Override
-    public boolean mensaje() {
+    public boolean puedeRecibirTratamiento() {
         LocalDate hoy = LocalDate.now();
         if (esImpar(getActividadesDeportivas().size()) && Period.between(getFechaNacimiento(),hoy).getYears() > getEdadMaxima()-2){
             System.out.println("Lamentamos comunicarte que tu sangre aún no va a poder ser modificada");

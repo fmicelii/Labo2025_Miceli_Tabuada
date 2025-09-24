@@ -19,4 +19,15 @@ public class Intermedio extends Participante{
         this.ingredienteStock = ingredienteStock;
     }
 
+    @Override
+    public void PrepararCocina() {
+        System.out.println("Mi stock a utilizar es de ");
+    }
+
+    public String recorrerIngredientes(){
+        String ingredientes = "";
+        for (Ingrediente i : ingredienteStock){
+
+        }
+    }
 }

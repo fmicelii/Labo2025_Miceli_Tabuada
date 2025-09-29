@@ -1,6 +1,5 @@
 package MasterChef;
 
-import Colores.Color;
 import Personas.Persona;
 
 import java.time.LocalDate;

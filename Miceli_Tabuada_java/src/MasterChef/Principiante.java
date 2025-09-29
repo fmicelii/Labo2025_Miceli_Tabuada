@@ -3,7 +3,7 @@ package MasterChef;
 import java.time.LocalDate;
 import java.util.HashSet;
 
-public class Principiante extends Participante{
+public class Principiante extends Participante implements PlatoEntradaOperator{
     private HashSet<Ingrediente> ingredientesProhibidos;
 
     public Principiante(String nombre, String apellido, LocalDate fechaNacimiento, String localidad, HashSet<Ingrediente> ingredientesProhibidos) {
@@ -32,4 +32,18 @@ public class Principiante extends Participante{
         return ingredientes;
     }
 
+    @Override
+    public void cocinarEntrada(PlatoEntrada plato) throws AccesoIngredienteProhibidoException{
+        for (Ingrediente i : ingredientesProhibidos){
+            if (plato.getIngredientesCantidadNecesaria().entrySet().contains(i)){
+                throw new AccesoIngredienteProhibidoException("el inrgediente " + i.getNombre() + " lo tiene prohibido el participante");
+            }
+        }
+        System.out.println("cocinando entrada...");
+    }
+
+    @Override
+    public void servirEntrada(PlatoEntrada plato) {
+        System.out.println("sirviendo entrada...");
+    }
 }

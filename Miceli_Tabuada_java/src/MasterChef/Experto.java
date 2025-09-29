@@ -38,11 +38,12 @@ public class Experto extends Participante implements PlatoPrincipalOperator,Plat
         if (getTiempoLimitePersonal() < plato.getTiempoCoccion()){
             throw new TiempoInsuficienteException("el tiempo del experto es insuficiente."); //uso el atributo tiempoCoccion que ya estaba antes en Plato
         }
+        System.out.println("experto cocinando entrada lol...");
     }
 
     @Override
     public void servirEntrada(PlatoEntrada plato) {
-        System.out.println("sirviendo entrada lol...");
+        System.out.println("experto sirviendo entrada lol...");
     }
 
     @Override
@@ -50,10 +51,11 @@ public class Experto extends Participante implements PlatoPrincipalOperator,Plat
         if (getTiempoLimitePersonal() < plato.getTiempoCoccion()){
             throw new TiempoInsuficienteException("el tiempo del experto es insuficiente."); //uso el atributo tiempoCoccion que ya estaba antes en Plato
         }
+        System.out.println("experto cocinando principal lol...");
     }
 
     @Override
     public void servirPlato(PlatoPrincipal plato) {
-        System.out.println("sirviendo plato anashe...");
+        System.out.println("experto sirviendo principal anashe...");
     }
 }

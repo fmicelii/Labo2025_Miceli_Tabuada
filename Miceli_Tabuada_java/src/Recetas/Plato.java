@@ -4,7 +4,6 @@ import MasterChef.Ingrediente;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 
 public abstract class Plato extends Receta {
     private int tiempoCoccion;

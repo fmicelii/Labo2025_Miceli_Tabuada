@@ -28,11 +28,18 @@ public class Nino extends Paciente implements Tratable{
     }
 
     @Override
-    public void mensaje() {
+    public double costoTratamiento() {
+        return 450000 * getToleranciaMedicamentos();
+    }
+
+    @Override
+    public boolean puedeRecibirTratamiento() {
         if (esMayor()){
             System.out.println("Tu tratamiento tardará esta cantidad de días: " + toleranciaMedicamentos*2);
+            return true;
         }else {
             System.out.println("Aún es chico para probar el tratamiento");
+            return false;
         }
     }
 

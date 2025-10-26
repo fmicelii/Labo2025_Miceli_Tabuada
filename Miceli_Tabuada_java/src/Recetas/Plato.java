@@ -1,15 +1,28 @@
 package Recetas;
 
-import java.util.ArrayList;
+import MasterChef.Ingrediente;
 
-public class Plato extends Receta {
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public abstract class Plato extends Receta {
     private int tiempoCoccion;
     private int comensales;
+    private HashMap<Ingrediente,Integer> ingredientesCantidadNecesaria;
 
-    public Plato(String nombre, Dificultad dificultad, ArrayList<String> pasos, int tiempoCoccion, int comensales) {
+    public Plato(String nombre, Dificultad dificultad, ArrayList<String> pasos, int tiempoCoccion, int comensales, HashMap<Ingrediente, Integer> ingredientesCantidadNecesaria) {
         super(nombre, dificultad, pasos);
         this.tiempoCoccion = tiempoCoccion;
         this.comensales = comensales;
+        this.ingredientesCantidadNecesaria = ingredientesCantidadNecesaria;
+    }
+
+    public HashMap<Ingrediente, Integer> getIngredientesCantidadNecesaria() {
+        return ingredientesCantidadNecesaria;
+    }
+
+    public void setIngredientesCantidadNecesaria(HashMap<Ingrediente, Integer> ingredientesCantidadNecesaria) {
+        this.ingredientesCantidadNecesaria = ingredientesCantidadNecesaria;
     }
 
     public int getTiempoCoccion() {

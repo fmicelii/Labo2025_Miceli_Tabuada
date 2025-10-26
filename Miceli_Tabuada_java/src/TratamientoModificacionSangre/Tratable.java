@@ -1,6 +1,6 @@
 package TratamientoModificacionSangre;
 
 public interface Tratable {
-    void mensaje();
+    boolean puedeRecibirTratamiento();
     double costoTratamiento();
 }

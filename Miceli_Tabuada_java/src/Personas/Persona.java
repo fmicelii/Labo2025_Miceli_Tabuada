@@ -1,7 +1,5 @@
 package Personas;
-import Objetos.Materia;
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 public class Persona {
     private String nombre;
@@ -14,6 +12,14 @@ public class Persona {
     private String direccion;
     private Pais pais;
     private Genero genero;
+    private String localidad;
+
+    public Persona(String nombre, String apellido, LocalDate fechaNacimiento, String localidad) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fechaNacimiento = fechaNacimiento;
+        this.localidad = localidad;
+    }
 
     public Persona(String nombre, String apellido, LocalDate fechaNacimiento, Genero genero) {
         this.nombre = nombre;

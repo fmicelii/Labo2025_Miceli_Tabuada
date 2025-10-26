@@ -35,4 +35,9 @@ public class Nino extends Paciente implements Tratable{
             System.out.println("Aún es chico para probar el tratamiento");
         }
     }
+
+    @Override
+    public double costoTratamiento() {
+        return 0;
+    }
 }
